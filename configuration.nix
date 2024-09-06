@@ -55,7 +55,7 @@
   users.users.rfhayashi = {
     isNormalUser = true;
     description = "Rui Fernando Hayashi";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   programs.firefox.enable = true;
@@ -73,6 +73,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "24.05";
 
