@@ -37,6 +37,7 @@ in
     megacmd
     gcap
     discord
+    gnome.gnome-terminal
   ];
 
   home.file.".bashrc".source = ./bashrc;
