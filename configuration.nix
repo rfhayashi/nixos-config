@@ -34,7 +34,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  services.xserver.windowManager.xmonad.enable = true;
+  services.xserver.windowManager.xmonad = {
+    enable = true;
+    enableContribAndExtras = true;
+  };
 
   services.xserver.xkb = {
     layout = "us";
@@ -64,10 +67,6 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "rfhayashi"];
-
-  environment.systemPackages = with pkgs; [
-    dmenu
-  ];
 
   programs.gnupg.agent = {
     enable = true;

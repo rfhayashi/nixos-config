@@ -12,7 +12,7 @@ in
 
   home.stateVersion = "24.05";
 
-  imports = [ ./utils.nix ];
+  imports = [ ./utils.nix ./xmonad.nix ];
 
   programs.home-manager.enable = true;
   programs.gh.enable = true;
