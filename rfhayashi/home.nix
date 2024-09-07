@@ -38,6 +38,7 @@ in
     gcap
     discord
     gnome.gnome-terminal
+    blueman
   ];
 
   home.file.".bashrc".source = ./bashrc;
