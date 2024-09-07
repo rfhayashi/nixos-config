@@ -78,4 +78,6 @@
 
   system.stateVersion = "24.05";
 
+  fonts.packages = with pkgs; [ source-code-pro ];
+
 }
