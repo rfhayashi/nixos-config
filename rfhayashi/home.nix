@@ -78,24 +78,24 @@ in
   '';
 
   xresources.properties = {
-    "XTerm*Background" = "#232323";
-    "XTerm*Foreground" = "#aeadaf";
-    "XTerm*Color0" = "#232323";
-    "XTerm*Color1" = "#d4823d";
-    "XTerm*Color2" = "#8c9e3d";
-    "XTerm*Color3" = "#b1942b";
-    "XTerm*Color4" = "#6e9cb0";
-    "XTerm*Color5" = "#b58d88";
-    "XTerm*Color6" = "#6da280";
-    "XTerm*Color7" = "#949d9f";
-    "XTerm*Color8" = "#312e30";
-    "XTerm*Color9" = "#d0913d";
-    "XTerm*Color10" = "#96a42d";
-    "XTerm*Color11" = "#a8a030";
-    "XTerm*Color12" = "#8e9cc0";
-    "XTerm*Color13" = "#d58888";
-    "XTerm*Color14" = "#7aa880";
-    "XTerm*Color15" = "#aeadaf";
+    "XTerm*Background" = "#3a3a3a";
+    "XTerm*Foreground" = "#dcdccc";
+    "XTerm*Color0" = "#000000";
+    "XTerm*Color1" = "#e89393";
+    "XTerm*Color2" = "#688060";
+    "XTerm*Color3" = "#f0dfaf";
+    "XTerm*Color4" = "#93b3a3";
+    "XTerm*Color5" = "#bca3a3";
+    "XTerm*Color6" = "#93b3a3";
+    "XTerm*Color7" = "#cccccc";
+    "XTerm*Color8" = "#222222";
+    "XTerm*Color9" = "#dca3a3";
+    "XTerm*Color10" = "#7f9f7f";
+    "XTerm*Color11" = "#efef8f";
+    "XTerm*Color12" = "#8cd0d3";
+    "XTerm*Color13" = "#c0bed1";
+    "XTerm*Color14" = "#8cd0d3";
+    "XTerm*Color15" = "#ffffff";
     "XTerm*FaceName" = "Source Code Pro:size=11";
   };
 
