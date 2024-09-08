@@ -12,4 +12,5 @@ main = xmonad $ def
          , ("M-S-l", confirmPrompt def "logout" $ io exitSuccess)
          , ("M-p", ulauncher)
          , ("M-<Space>", ulauncher)
+         , ("M-<Escape>", spawn "xlock -mode blank")
          ]

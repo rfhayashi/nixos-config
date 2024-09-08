@@ -38,6 +38,7 @@ in
     gcap
     discord
     blueman
+    xlockmore
   ];
 
   home.file.".bashrc".source = ./bashrc;
