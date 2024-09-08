@@ -37,7 +37,6 @@ in
     megacmd
     gcap
     discord
-    gnome.gnome-terminal
     blueman
   ];
 
