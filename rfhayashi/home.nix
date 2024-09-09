@@ -41,6 +41,7 @@ in
     xlockmore
     zoom-us
     alsa-utils
+    scrot
   ];
 
   home.file.".bashrc".source = ./bashrc;
