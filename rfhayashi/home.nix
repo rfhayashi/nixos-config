@@ -40,6 +40,7 @@ in
     blueman
     xlockmore
     zoom-us
+    alsa-utils
   ];
 
   home.file.".bashrc".source = ./bashrc;
