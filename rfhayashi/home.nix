@@ -39,6 +39,7 @@ in
     discord
     blueman
     xlockmore
+    zoom-us
   ];
 
   home.file.".bashrc".source = ./bashrc;
