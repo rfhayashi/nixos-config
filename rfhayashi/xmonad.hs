@@ -13,4 +13,5 @@ main = xmonad $ def
          , ("M-p", ulauncher)
          , ("M-<Space>", ulauncher)
          , ("M-<Escape>", spawn "xlock -mode blank")
+         , ("M-S-<Backspace>", spawn "switch-keyboard-layout")
          ]

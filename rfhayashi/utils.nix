@@ -53,7 +53,16 @@ let
     ${pkgs.gh}/bin/gh auth refresh -h github.com -s write:gpg_key
     ${pkgs.gh}/bin/gh gpg-key add $temp_file -t latitude
   '';
+
+  switch-keyboard-layout = pkgs.writeScriptBin "switch-keyboard-layout" ''
+    #!${pkgs.babashka}/bin/bb
+
+    (let [output (:out (shell/sh "${pkgs.xorg.setxkbmap}/bin/setxkbmap" "-query"))
+          [_ layout] (re-find #"layout: *(\w+)\n" output)
+          new-layout (case layout "br" "us" "br")]
+      (shell/sh "${pkgs.xorg.setxkbmap}/bin/setxkbmap" new-layout))
+  '';
 in
 {
-  home.packages = [ gen-ssh-key gen-gpg-key ];
+  home.packages = [ gen-ssh-key gen-gpg-key switch-keyboard-layout ];
 }
