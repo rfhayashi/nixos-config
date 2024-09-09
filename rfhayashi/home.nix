@@ -42,6 +42,8 @@ in
     zoom-us
     alsa-utils
     scrot
+    notify-osd
+    libnotify
   ];
 
   home.file.".bashrc".source = ./bashrc;
