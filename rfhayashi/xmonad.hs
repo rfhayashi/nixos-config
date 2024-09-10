@@ -14,19 +14,17 @@ main = xmonad $ def
          {
            workspaces = myWorkspaces
          }
-         `additionalKeys`
-         [ ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 5000-")
-         , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 5000+")
-         , ((0, xF86XK_AudioMute          ), spawn "amixer set Master toggle")
-         ]
          `additionalKeysP`
-         ([ ("M-S-q", kill)
-          , ("M-S-l", confirmPrompt def "logout" $ io exitSuccess)
-          , ("M-p", ulauncher)
-          , ("M-<Space>", ulauncher)
-          , ("M-<Escape>", spawn "xlock -mode blank")
-          , ("M-S-<Backspace>", spawn "switch-keyboard-layout")
-          , ("M-s", spawn "cd ~/Downloads && scrot --select")]
+         ([("<XF86AudioRaiseVolume>", spawn "amixer set Master 5000+")
+          ,("<XF86AudioLowerVolume>", spawn "amixer set Master 5000-")
+          ,("<XF86AudioMute>", spawn "amixer set Master toggle")
+          ,("M-S-q", kill)
+          ,("M-S-l", confirmPrompt def "logout" $ io exitSuccess)
+          ,("M-p", ulauncher)
+          ,("M-<Space>", ulauncher)
+          ,("M-<Escape>", spawn "xlock -mode blank")
+          ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
+          ,("M-s", spawn "cd ~/Downloads && scrot --select")]
           ++ switchWorkspaceKeys)
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
