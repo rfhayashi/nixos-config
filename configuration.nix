@@ -80,4 +80,12 @@
 
   fonts.packages = with pkgs; [ source-code-pro ];
 
+  stylix = {
+    enable = true;
+    image = pkgs.fetchurl {
+      url = "https://fedoraproject.org/w/uploads/0/01/F8-wallpaper-morning.png";
+      sha256 = "sha256-UPn9OhXEUHxedWx5+Uz6QzAVverPM+oiUMhhb0VBR0c=";
+    };
+  };
+
 }
