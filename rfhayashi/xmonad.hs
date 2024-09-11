@@ -21,7 +21,6 @@ main = xmonad $ def
           ,("M-S-q", kill)
           ,("M-S-l", confirmPrompt def "logout" $ io exitSuccess)
           ,("M-p", ulauncher)
-          ,("M-<Space>", ulauncher)
           ,("M-<Escape>", spawn "xlock -mode blank")
           ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
           ,("M-s", spawn "cd ~/Downloads && scrot --select")
