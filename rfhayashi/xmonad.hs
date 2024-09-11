@@ -24,7 +24,9 @@ main = xmonad $ def
           ,("M-<Space>", ulauncher)
           ,("M-<Escape>", spawn "xlock -mode blank")
           ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
-          ,("M-s", spawn "cd ~/Downloads && scrot --select")]
+          ,("M-s", spawn "cd ~/Downloads && scrot --select")
+          ,("M-S-<Return>", spawn "firefox")
+          ,("M-<Return>", spawn "xterm")]
           ++ switchWorkspaceKeys)
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
