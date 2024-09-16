@@ -1,18 +1,19 @@
 import XMonad
 import System.Exit (exitSuccess)
-
 import qualified XMonad.StackSet as W
-
 import XMonad.Util.EZConfig
 import XMonad.Prompt.ConfirmPrompt
-
-import Graphics.X11.ExtraTypes.XF86
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.SpawnOnce
 
 ulauncher = spawn "ulauncher"
 
-main = xmonad $ def
+main = xmonad $ docks $ def
          {
            workspaces = myWorkspaces
+         , manageHook = myManageHook
+         , layoutHook = myLayout
+         , startupHook = myStartupHook
          }
          `additionalKeysP`
          ([("<XF86AudioRaiseVolume>", spawn "amixer set Master 5000+")
@@ -27,6 +28,18 @@ main = xmonad $ def
           ,("M-S-<Return>", spawn "firefox")
           ,("M-<Return>", spawn "xterm")]
           ++ switchWorkspaceKeys)
+
+myManageHook = manageDocks
+
+myLayout = avoidStruts(tiled ||| Mirror tiled ||| Full)
+  where
+     tiled   = Tall nmaster delta ratio
+     nmaster = 1
+     ratio   = 1/2
+     delta   = 3/100
+
+myStartupHook = do
+  spawnOnce "exec eww open bar"
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 

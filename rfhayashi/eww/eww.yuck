@@ -1,0 +1,25 @@
+(defwidget bar []
+  (box
+   :orientation "h"
+   (sidestuff)))
+
+(defwidget sidestuff []
+  (box
+   :style "padding: 2px;"
+   :orientation "h"
+   :space-evenly false
+   :halign "end"
+   time))
+
+(defpoll time :interval "10s" "date '+%H:%M'")
+
+(defwindow bar
+    :stacking "fg"
+    :windowtype "dock"
+    :reserve (struts :distance "25px" :side "top")
+    :wm-ignore false
+    :geometry (geometry
+	       :width "100%"
+	       :height "25px"
+	       :anchor "top center")
+    (bar))
