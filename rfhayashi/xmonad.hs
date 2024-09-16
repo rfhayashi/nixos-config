@@ -39,7 +39,8 @@ myLayout = avoidStruts(tiled ||| Mirror tiled ||| Full)
      delta   = 3/100
 
 myStartupHook = do
-  spawnOnce "exec eww open bar"
+  spawnOnce "autorandr --change"
+  spawnOnce "exec eww open --screen 0 bar"
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
