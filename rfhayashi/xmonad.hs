@@ -26,7 +26,7 @@ main = xmonad $ docks $ def
           ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
           ,("M-s", spawn "cd ~/Downloads && scrot --select")
           ,("M-S-<Return>", spawn "firefox")
-          ,("M-<Return>", spawn "xterm")]
+          ,("M-<Return>", spawn "alacritty")]
           ++ switchWorkspaceKeys)
 
 myManageHook = manageDocks

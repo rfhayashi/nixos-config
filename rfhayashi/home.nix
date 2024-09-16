@@ -44,6 +44,7 @@ in
     scrot
     notify-osd
     libnotify
+    alacritty
   ];
 
   home.file.".bashrc".source = ./bashrc;
@@ -103,5 +104,7 @@ in
     "XTerm*Color15" = "#ffffff";
     "XTerm*FaceName" = "Source Code Pro:size=11";
   };
+
+  home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
 
 }
