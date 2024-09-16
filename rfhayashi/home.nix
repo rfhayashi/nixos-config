@@ -83,28 +83,6 @@ in
                          (portal.api/tap)]}}
   '';
 
-  xresources.properties = {
-    "XTerm*Background" = "#3a3a3a";
-    "XTerm*Foreground" = "#dcdccc";
-    "XTerm*Color0" = "#000000";
-    "XTerm*Color1" = "#e89393";
-    "XTerm*Color2" = "#688060";
-    "XTerm*Color3" = "#f0dfaf";
-    "XTerm*Color4" = "#93b3a3";
-    "XTerm*Color5" = "#bca3a3";
-    "XTerm*Color6" = "#93b3a3";
-    "XTerm*Color7" = "#cccccc";
-    "XTerm*Color8" = "#222222";
-    "XTerm*Color9" = "#dca3a3";
-    "XTerm*Color10" = "#7f9f7f";
-    "XTerm*Color11" = "#efef8f";
-    "XTerm*Color12" = "#8cd0d3";
-    "XTerm*Color13" = "#c0bed1";
-    "XTerm*Color14" = "#8cd0d3";
-    "XTerm*Color15" = "#ffffff";
-    "XTerm*FaceName" = "Source Code Pro:size=11";
-  };
-
   home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
 
 }

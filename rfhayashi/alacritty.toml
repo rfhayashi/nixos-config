@@ -8,24 +8,24 @@ foreground = '#DCDCCC'
 
 # Normal colors
 [colors.normal]
-black   = '#1E2320'
-red     = '#D78787'
-green   = '#60B48A'
-yellow  = '#DFAF8F'
-blue    = '#506070'
-magenta = '#DC8CC3'
-cyan    = '#8CD0D3'
-white   = '#DCDCCC'
+black   = '#000000'
+red     = '#E89393'
+green   = '#688060'
+yellow  = '#F0DFAF'
+blue    = '#93B3A3'
+magenta = '#BCA3A3'
+cyan    = '#93B3A3'
+white   = '#CCCCCC'
 
 # Bright colors
 [colors.bright]
-black   = '#709080'
+black   = '#222222'
 red     = '#DCA3A3'
-green   = '#C3BF9F'
-yellow  = '#F0DFAF'
-blue    = '#94BFF3'
-magenta = '#EC93D3'
-cyan    = '#93E0E3'
+green   = '#7F9F7F'
+yellow  = '#EFEF8F'
+blue    = '#8CD0D3'
+magenta = '#C0BED1'
+cyan    = '#8CD0D3'
 white   = '#FFFFFF'
 
 [font]
