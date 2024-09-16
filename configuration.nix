@@ -82,6 +82,9 @@
 
   services.autorandr = {
     enable = true;
+    hooks = {
+      postswitch = {"status-bar" = "${pkgs.eww}/bin/eww open --screen 0 bar";};
+    };
     profiles = {
       "laptop" = {
         fingerprint = {
