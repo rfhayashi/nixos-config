@@ -47,6 +47,7 @@ in
     alacritty
     networkmanagerapplet
     cbatticon
+    acpi
   ];
 
   home.file.".bashrc".source = ./bashrc;

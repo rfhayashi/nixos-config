@@ -10,15 +10,18 @@
    :space-evenly false
    :spacing 5
    :halign "end"
+   (box :style "background-image: url('${batticon}');" :class "trayicon")
    (systray :orientation "h" :icon-size 20)
    time))
 
 (defpoll time :interval "10s" "date '+%H:%M'")
 
+(defpoll batticon :interval "1m" `scripts/battery --icon`)
+
 (defwindow bar
     :stacking "fg"
     :windowtype "dock"
-    :reserve (struts :distance "25px" :side "top")
+    :reserve (struts :distance "28px" :side "top")
     :wm-ignore false
     :geometry (geometry
 	       :width "100%"
