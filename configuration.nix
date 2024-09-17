@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, metadata, ... }:
 
+assert metadata.username != null;
 {
   imports =
     [
@@ -62,7 +63,7 @@
     pulse.enable = true;
   };
 
-  users.users.rfhayashi = {
+  users.users.${metadata.username} = {
     isNormalUser = true;
     description = "Rui Fernando Hayashi";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
@@ -73,7 +74,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.trusted-users = ["root" "rfhayashi"];
+  nix.settings.trusted-users = ["root" "${metadata.username}"];
 
   programs.gnupg.agent = {
     enable = true;

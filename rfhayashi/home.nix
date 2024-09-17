@@ -1,14 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, metadata, ... }:
 
 let
-  username = "rfhayashi";
-  homeDir = "/home/" + username;
   gcap = pkgs.callPackage ./gcap.nix { };
-  portalVersion = "0.57.2";
 in
 {
-  home.username = username;
-  home.homeDirectory = homeDir;
+  home.username = metadata.username;
+  home.homeDirectory = metadata.home-dir;
 
   home.stateVersion = "24.05";
 
@@ -19,11 +16,11 @@ in
 
   programs.git = {
     enable = true;
-    userName = "Rui Fernando Hayashi";
-    userEmail = "rfhayashi@gmail.com";
+    userName = metadata.fullname;
+    userEmail = metadata.email;
     signing = {
       signByDefault = true;
-      key = "rfhayashi@gmail.com";
+      key = metadata.email;
     };
   };
 
@@ -55,7 +52,7 @@ in
   home.file.".emacs.d".source = pkgs.chemacs2 + "/share/site-lisp/chemacs2";
 
   home.file.".emacs-profiles.el".text = ''
-    (("default" . ((user-emacs-directory . "${homeDir}/dev/emacs.d")
+    (("default" . ((user-emacs-directory . "${metadata.home-dir}/dev/emacs.d")
                    (straight-p . t))))
   '';
 
@@ -69,14 +66,14 @@ in
 
   home.file.".clojure/deps.edn".text = ''
     {
-      :aliases {:user {:extra-deps {global/user {:local/root "${homeDir}/.clojure/injections"}
-                                    djblue/portal {:mvn/version "${portalVersion}"}}}}
+      :aliases {:user {:extra-deps {global/user {:local/root "${metadata.home-dir}/.clojure/injections"}
+                                    djblue/portal {:mvn/version "${metadata.clojure-portal.version}"}}}}
     }
   '';
 
   home.file.".lein/profiles.clj".text = ''
-    {:user {:dependencies [[djblue/portal "${portalVersion}"]]
-            :injections [(load-file "${homeDir}/.clojure/injections/src/tap.clj")
+    {:user {:dependencies [[djblue/portal "${metadata.clojure-portal.version}"]]
+            :injections [(load-file "${metadata.home-dir}/.clojure/injections/src/tap.clj")
                          (alter-var-root #'default-data-readers
                                          (fn [v]
                                            (-> v

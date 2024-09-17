@@ -1,16 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, metadata, ... }:
 
 let
-  # TODO pass data as parameter
   # TODO delete existing key
   gen-ssh-key = pkgs.writeShellScriptBin "gen-ssh-key" ''
     set -e
-    ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -C "rfhayashi@gmail.com" -f /home/rfhayashi/.ssh/id_ed25519 -q -N ""
+    ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -C "${metadata.email}" -f ${metadata.home-dir}/.ssh/id_ed25519 -q -N ""
     if ! ${pkgs.gh}/bin/gh auth status; then
       ${pkgs.gh}/bin/gh auth login
     fi
     ${pkgs.gh}/bin/gh auth refresh -h github.com -s admin:public_key
-    ${pkgs.gh}/bin/gh ssh-key add /home/rfhayashi/.ssh/id_ed25519.pub -t latitude
+    ${pkgs.gh}/bin/gh ssh-key add ${metadata.home-dir}/.ssh/id_ed25519.pub -t latitude
   '';
   gpg-script = pkgs.writeTextFile {
     name = "gpg-script";
@@ -19,8 +18,8 @@ let
       Key-Length: 2048
       Subkey-Type: 1
       Subkey-Length: 2048
-      Name-Real: Rui Fernando Hayashi
-      Name-Email: rfhayashi@gmail.com
+      Name-Real: ${metadata.fullname}
+      Name-Email: ${metadata.email}
       Expire-Date: 0
     '';
   };
