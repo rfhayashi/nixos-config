@@ -28,7 +28,7 @@ main = xmonad $ docks $ def
           ,("M-s", spawn "cd ~/Downloads && scrot --select")
           ,("M-S-<Return>", spawn "firefox")
           ,("M-<Return>", spawn "alacritty")
-          ,("M-k", myCommands >>= runCommand)]
+          ,("M-S-k", myCommands >>= runCommand)]
           ++ switchWorkspaceKeys)
 
 myCommands = defaultCommands
