@@ -5,6 +5,7 @@ import XMonad.Util.EZConfig
 import XMonad.Prompt.ConfirmPrompt
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.SpawnOnce
+import XMonad.Actions.Commands
 
 ulauncher = spawn "ulauncher"
 
@@ -26,8 +27,11 @@ main = xmonad $ docks $ def
           ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
           ,("M-s", spawn "cd ~/Downloads && scrot --select")
           ,("M-S-<Return>", spawn "firefox")
-          ,("M-<Return>", spawn "alacritty")]
+          ,("M-<Return>", spawn "alacritty")
+          ,("M-k", myCommands >>= runCommand)]
           ++ switchWorkspaceKeys)
+
+myCommands = defaultCommands
 
 myManageHook = manageDocks
 
