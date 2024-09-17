@@ -45,6 +45,7 @@ in
     notify-osd
     libnotify
     alacritty
+    networkmanagerapplet
   ];
 
   home.file.".bashrc".source = ./bashrc;
@@ -84,5 +85,14 @@ in
   '';
 
   home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
+
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
+  };
+
+  services.blueman-applet.enable = true;
 
 }
