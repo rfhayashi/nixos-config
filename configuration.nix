@@ -65,7 +65,7 @@ assert metadata.username != null;
 
   users.users.${metadata.username} = {
     isNormalUser = true;
-    description = "Rui Fernando Hayashi";
+    description = "${metadata.fullname}";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
