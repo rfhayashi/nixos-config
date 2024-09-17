@@ -42,6 +42,7 @@ myStartupHook = do
   spawnOnce "autorandr --change"
   spawnOnce "exec eww open --screen 0 bar"
   spawnOnce "exec nm-applet --indicator"
+  spawnOnce "exec cbatticon"
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 

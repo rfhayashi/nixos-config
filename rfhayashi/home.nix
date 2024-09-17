@@ -46,6 +46,7 @@ in
     libnotify
     alacritty
     networkmanagerapplet
+    cbatticon
   ];
 
   home.file.".bashrc".source = ./bashrc;
