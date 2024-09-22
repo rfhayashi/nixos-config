@@ -9,12 +9,14 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
+      system = "x86_64-linux";
       base-metadata = (nixpkgs.lib.modules.importTOML ./metadata.toml).config;
       metadata = base-metadata // { home-dir = "/home/${base-metadata.username}"; };
+      local-pkgs = (import ./packages) { pkgs = import nixpkgs { inherit system; }; };
     in
     {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
       modules = [
         ./system
         home-manager.nixosModules.home-manager
@@ -22,10 +24,10 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.${metadata.username} = import ./user;
-          home-manager.extraSpecialArgs = { inherit metadata; };
+          home-manager.extraSpecialArgs = { inherit metadata local-pkgs; };
         }
       ];
-      specialArgs = { inherit metadata ; };
+      specialArgs = { inherit metadata local-pkgs; };
     };
   };
 }

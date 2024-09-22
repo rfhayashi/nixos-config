@@ -1,8 +1,5 @@
-{ config, pkgs, metadata, ... }:
+{ config, pkgs, metadata, local-pkgs, ... }:
 
-let
-  localPkgs = (import ../packages) { inherit pkgs; };
-in
 {
   home.username = metadata.username;
   home.homeDirectory = metadata.home-dir;
@@ -29,7 +26,7 @@ in
   };
 
   home.packages = with pkgs; [
-    localPkgs.gcap
+    local-pkgs.gcap
     direnv
     devenv
     megacmd
