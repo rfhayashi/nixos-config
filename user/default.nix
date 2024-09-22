@@ -13,7 +13,6 @@
   home.packages = with pkgs; [
     local-pkgs.gcap
     discord
-    blueman
     zoom-us
   ];
 }

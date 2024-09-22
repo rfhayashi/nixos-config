@@ -22,6 +22,7 @@ in
       acpi
       alsa-utils
       alacritty
+      blueman
     ];
 
     xsession.windowManager.xmonad = {
