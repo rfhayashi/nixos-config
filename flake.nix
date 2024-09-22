@@ -21,7 +21,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.${metadata.username} = import ./${metadata.username}/home.nix;
+          home-manager.users.${metadata.username} = import ./user;
           home-manager.extraSpecialArgs = { inherit metadata; };
         }
       ];
