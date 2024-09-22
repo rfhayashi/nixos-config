@@ -1,4 +1,4 @@
 { ... }:
 {
-  imports = [ ./xmonad ];
+  imports = [ ./clojure ./xmonad ];
 }
