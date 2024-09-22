@@ -12,12 +12,8 @@
   
   home.packages = with pkgs; [
     local-pkgs.gcap
-    direnv
-    devenv
     discord
     blueman
     zoom-us
   ];
-
-  home.file.".bashrc".source = ./bashrc;
 }
