@@ -16,29 +16,8 @@
     devenv
     discord
     blueman
-    xlockmore
     zoom-us
-    alsa-utils
-    scrot
-    notify-osd
-    libnotify
-    alacritty
-    networkmanagerapplet
-    cbatticon
-    acpi
   ];
 
   home.file.".bashrc".source = ./bashrc;
-
-  home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
-
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
-    };
-  };
-
-  services.blueman-applet.enable = true;
-
 }

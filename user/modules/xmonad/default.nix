@@ -9,7 +9,20 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ dmenu ulauncher eww ];
+    home.packages = with pkgs; [
+      dmenu
+      ulauncher
+      eww
+      xlockmore
+      scrot
+      notify-osd
+      libnotify
+      networkmanagerapplet
+      cbatticon
+      acpi
+      alsa-utils
+      alacritty
+    ];
 
     xsession.windowManager.xmonad = {
       enable = true;
@@ -17,6 +30,17 @@ in
       config = ./xmonad.hs;
     };
 
+    systemd.user.targets.tray = {
+      Unit = {
+        Description = "Home Manager System Tray";
+        Requires = [ "graphical-session-pre.target" ];
+      };
+    };
+
+    services.blueman-applet.enable = true;
+
     home.file.".config/eww".source = ./eww;
+
+    home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
   };
 }
