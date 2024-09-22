@@ -21,10 +21,6 @@
     };
   };
 
-  programs.emacs = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
     local-pkgs.gcap
     direnv
@@ -45,13 +41,6 @@
   ];
 
   home.file.".bashrc".source = ./bashrc;
-
-  home.file.".emacs.d".source = pkgs.chemacs2 + "/share/site-lisp/chemacs2";
-
-  home.file.".emacs-profiles.el".text = ''
-    (("default" . ((user-emacs-directory . "${metadata.home-dir}/dev/emacs.d")
-                   (straight-p . t))))
-  '';
 
   home.file.".megaCmd/excluded".text = ''
     Thumbs.db
