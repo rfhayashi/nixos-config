@@ -25,7 +25,6 @@
     local-pkgs.gcap
     direnv
     devenv
-    megacmd
     discord
     blueman
     xlockmore
@@ -42,12 +41,6 @@
 
   home.file.".bashrc".source = ./bashrc;
 
-  home.file.".megaCmd/excluded".text = ''
-    Thumbs.db
-    desktop.ini
-    ~.*
-  '';
-  
   home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
 
   systemd.user.targets.tray = {
