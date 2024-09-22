@@ -1,6 +1,5 @@
 { config, pkgs, metadata, ... }:
 
-assert metadata.username != null;
 {
   imports =
     [
