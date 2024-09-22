@@ -9,18 +9,7 @@
   imports = [ ./utils.nix ./modules ../shared ];
 
   programs.home-manager.enable = true;
-  programs.gh.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName = metadata.fullname;
-    userEmail = metadata.email;
-    signing = {
-      signByDefault = true;
-      key = metadata.email;
-    };
-  };
-
+  
   home.packages = with pkgs; [
     local-pkgs.gcap
     direnv
