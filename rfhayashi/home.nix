@@ -1,7 +1,7 @@
 { config, pkgs, metadata, ... }:
 
 let
-  gcap = pkgs.callPackage ./gcap.nix { };
+  localPkgs = (import ../packages) { inherit pkgs; };
 in
 {
   home.username = metadata.username;
@@ -29,10 +29,10 @@ in
   };
 
   home.packages = with pkgs; [
+    localPkgs.gcap
     direnv
     devenv
     megacmd
-    gcap
     discord
     blueman
     xlockmore
