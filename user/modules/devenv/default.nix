@@ -2,14 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    direnv
     devenv
   ];
 
-  programs.bash = {
+  programs.bash.enable = true;
+
+  programs.direnv = {
     enable = true;
-    bashrcExtra = ''
-      eval "$(direnv hook bash)"
-    '';
+    enableBashIntegration = true;
   };
 }
