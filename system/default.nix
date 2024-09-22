@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware.nix
-      ../modules/system
+      ./modules
       ../shared
     ];
 
