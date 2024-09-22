@@ -4,6 +4,8 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/system
+      ./shared
     ];
 
   nix.gc = {
@@ -40,11 +42,6 @@
 
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  services.xserver.windowManager.xmonad = {
-    enable = true;
-    enableContribAndExtras = true;
-  };
 
   services.xserver.xkb = {
     layout = "us";
