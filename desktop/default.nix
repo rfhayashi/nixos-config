@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./modules/system
-      ./shared
+      ./hardware.nix
+      ../modules/system
+      ../shared
     ];
 
   nix.gc = {
