@@ -8,12 +8,6 @@
       ../shared
     ];
 
-  sops.age.keyFile = "/home/${metadata.username}/.config/sops/age/keys.txt";
-  sops.defaultSopsFile = ../secrets.yml;
-  sops.secrets."user/password" = {
-    neededForUsers = true;
-  };
-
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -68,7 +62,6 @@
   users.users.${metadata.username} = {
     isNormalUser = true;
     description = "${metadata.fullname}";
-    hashedPasswordFile = config.sops.secrets."user/password".path;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
