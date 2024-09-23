@@ -1,0 +1,4 @@
+keys:
+  - &rfhayashi age14pj8zxaldz852yzg3324hh2y98pz4ggvyca6dg47j7fa4nt673ys0tjupn
+creation_rules:
+  - age: *rfhayashi
