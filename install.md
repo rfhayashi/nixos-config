@@ -43,10 +43,7 @@ to `/etc/nixos/configuration.nix` and run `sudo nixos rebuild switch`.
 
 Copy `/etc/nixos/hardware-configuration.nix` over `system/hardware.nix`.
 
-Move the `boot.initrd.luks.devices` line from `/etc/nixos/configuration.nix`
-to `system/hardware.nix`.
-
-Run `sudo nixos-rebuild switch --flake .` to finish installation.
+Run `nix-shell -p git --command "sudo nixos-rebuild switch --flake ."` to finish installation.
 
 ## After installation
 
