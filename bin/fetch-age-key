@@ -1,0 +1,9 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p bitwarden-cli
+
+set -e
+
+bw login || true
+mkdir -p ~/.config/sops/age
+bw get notes "Nixos Age Key" > ~/.config/sops/age/keys.txt
+echo "age key copied to ~/.config/sops/age/keys.txt"
