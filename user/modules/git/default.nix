@@ -26,9 +26,24 @@
     };
   };
 
+  systemd.user.services = {
+    import-git-gpg-key = {
+      Unit = {
+        After = ["sops-nix.service"];
+      };
+      Service = {
+        Type = "oneshot";
+        ExecStart = ''
+          ${pkgs.gnupg}/bin/gpg --batch --import ${config.sops.secrets."git/gpg_key".path}
+        '';
+      };
+      Install.WantedBy = ["default.target"];
+    };
+  };
+
   home.activation = {
-    importGitGpgKey = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      run ${pkgs.gnupg}/bin/gpg --batch --import ${config.sops.secrets."git/gpg_key".path}
+    import-git-gpg-key = lib.hm.dag.entryAfter ["reloadSystemd"] ''
+      ${config.systemd.user.systemctlPath} --user restart import-git-gpg-key 
     '';
   };
 
