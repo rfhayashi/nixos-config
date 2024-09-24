@@ -54,5 +54,5 @@ let
   '';
   in
 {
-  home.packages = [ gen-ssh-key gen-gpg-key switch-keyboard-layout ];
+  home.packages = [ gen-ssh-key gen-gpg-key ];
 }
