@@ -6,7 +6,7 @@
 
   home.stateVersion = "24.05";
 
-  imports = [ ./utils.nix ./modules ../shared ];
+  imports = [ ./modules ../shared ];
 
   programs.home-manager.enable = true;
   
