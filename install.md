@@ -67,6 +67,7 @@ git clone git@github.com:rfhayashi/nixos-config
 git clone git@github.com:rfhayashi/emacs.d
 cd nixos-config
 cp /tmp/nixos-config/system/hardware.nix system/hardware.nix
+git add .
 git commit -m "hardware update"
 git push
 rm -rf /tmp/nixos-config
