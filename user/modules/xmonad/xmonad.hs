@@ -22,6 +22,8 @@ main = xmonad $ docks $ def
           ,("<XF86AudioMute>", spawn "amixer set Master toggle")
           ,("M-S-q", kill)
           ,("M-S-l", confirmPrompt def "logout" $ io exitSuccess)
+          ,("M-S-r", confirmPrompt def "reboot" $ spawn "reboot")
+          ,("M-S-p", confirmPrompt def "poweroff" $ spawn "poweroff")
           ,("M-p", ulauncher)
           ,("M-<Escape>", spawn "xlock -mode blank")
           ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
