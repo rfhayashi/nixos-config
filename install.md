@@ -29,15 +29,28 @@ Select "GUID Partition Table (GPT)" when creating new partitions.
 ## Activate flakes
 
 Add `nix.settings.experimental-features = ["nix-command" "flakes"];`
-to `/etc/nixos/configuration.nix` and run `sudo nixos rebuild switch`.
+to `/etc/nixos/configuration.nix` and run `sudo nixos-rebuild switch`.
+
+```shell
+sudo su
+nix-shell -p vim --command "vim /etc/nixos/configuration.nix"
+nixos-rebuild switch
+exit
+```
 
 ## Clone this repo to `/tmp`
 
-`nix-shell -p git --command "git clone https://github.com/rfhayashi/nixos-config"`
+```shell
+cd /tmp
+nix-shell -p git --command "git clone https://github.com/rfhayashi/nixos-config"
+```
 
 ## Fetch age key
 
-`bin/fetch-age-key`
+```shell
+cd nixos-config
+bin/fetch-age-key
+```
 
 ## hardware-configuration.nix
 
