@@ -27,7 +27,7 @@
 
   home.activation = {
     import-git-gpg-key = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      ${pkgs.sops}/bin/sops --decrypt ${../../../secrets.yaml} \
+      run ${pkgs.sops}/bin/sops --decrypt ${../../../secrets.yaml} \
       | ${pkgs.yq}/bin/yq -r .git.gpg_key \
       | ${pkgs.gnupg}/bin/gpg --batch --import
     '';
