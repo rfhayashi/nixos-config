@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     devenv
+    nil
   ];
 
   programs.bash.enable = true;
