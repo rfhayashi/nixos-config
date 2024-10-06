@@ -1,5 +1,6 @@
 (ns user
   (:require [tap]
-            [portal.api]))
+            [portal.api]
+            [portal]))
 
 (portal.api/tap)
