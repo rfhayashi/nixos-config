@@ -22,4 +22,8 @@
                          (portal.api/tap)]}}
   '';
 
+  home.file.".config/clj-kondo/config.edn".text = ''
+    {:linters {:unresolved-namespace {:exclude [portal tap]}}}
+  '';
+
 }
