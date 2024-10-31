@@ -23,4 +23,15 @@
 (defmacro d [form]
   (d-reader form))
 
+(defn t-reader [form]
+  `(let [start# (System/currentTimeMillis)]
+     (try
+       ~form
+       (finally
+         (let [end# (System/currentTimeMillis)]
+           (tap> {:code (pr-str (quote ~form))
+                  :time-ms (- end# start#)}))))))
+
+(defmacro t [form]
+  (t-reader form))
 
