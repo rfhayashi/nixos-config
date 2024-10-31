@@ -4,10 +4,10 @@
   home.file.".clojure/injections".source = ./injections;
 
   home.file.".clojure/deps.edn".text = ''
-    {
-      :aliases {:user {:extra-deps {global/user {:local/root "${metadata.home-dir}/.clojure/injections"}
-                                    djblue/portal {:mvn/version "${metadata.clojure-portal.version}"}}}}
-    }
+    {:aliases {:user {:extra-deps {global/user {:local/root "${metadata.home-dir}/.clojure/injections"}
+                                   djblue/portal {:mvn/version "${metadata.clojure-portal.version}"}}}
+               :async-profiler {:extra-deps {com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.4.0"}}
+                                :jvm-opts ["-Djdk.attach.allowAttachSelf"]}}}
   '';
 
   home.file.".lein/profiles.clj".text = ''
