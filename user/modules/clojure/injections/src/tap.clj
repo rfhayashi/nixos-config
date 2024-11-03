@@ -35,3 +35,24 @@
 (defmacro t [form]
   (t-reader form))
 
+(def ^:private !timers (atom {}))
+
+(defn start-timer [id]
+  (let [start (System/currentTimeMillis)]
+    (tap> [:start-timer id])
+    (swap! !timers update id (fn [v]
+                               (if-not v
+                                 start
+                                 (throw (ex-info "Timer already started" {:timer-id id})))))
+    nil))
+
+(defn end-timer [id]
+  (if-let [start (get @!timers id)]
+    (let [end (System/currentTimeMillis)]
+      (tap> [:end-timer id (- end start)])
+      (swap! !timers dissoc id))
+    (throw (ex-info "Timer has not been started" {:timer-id id}))))
+
+(defn reset-timer [id]
+  (swap! !timers dissoc id))
+
