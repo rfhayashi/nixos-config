@@ -28,7 +28,13 @@ Select "GUID Partition Table (GPT)" when creating new partitions.
 
 ## Activate flakes
 
-Add `nix.settings.experimental-features = ["nix-command" "flakes"];`
+Add 
+
+```
+nix.settings.experimental-features = ["nix-command" "flakes"];
+nix.settings.access-tokens = "github.com=<github_token>";
+```
+
 to `/etc/nixos/configuration.nix` and run `sudo nixos-rebuild switch`.
 
 ```shell
