@@ -71,7 +71,9 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "${metadata.username}"];
-  nix.settings.netrc-path = "/etc/nix/netrc";
+
+  sops.secrets.nix-access-tokens = {};
+  nix.extraOptions = "!include ${config.sops.secrets.nix-access-tokens.path}";
 
   programs.gnupg.agent = {
     enable = true;
