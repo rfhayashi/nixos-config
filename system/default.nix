@@ -72,7 +72,10 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "${metadata.username}"];
 
-  sops.secrets.nix-access-tokens = {};
+  sops.secrets.nix-access-tokens = {
+    mode = "0440";
+    group = config.users.groups.keys.name;
+  };
   nix.extraOptions = "!include ${config.sops.secrets.nix-access-tokens.path}";
 
   programs.gnupg.agent = {
