@@ -70,7 +70,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.trusted-users = ["root" "${metadata.username}"];
+  nix.settings.trusted-users = ["${metadata.username}"];
 
   sops.secrets.nix-access-tokens = {
     mode = "0440";
