@@ -1,4 +1,4 @@
-{ config, pkgs, metadata, ... }:
+{ config, pkgs, xclj-pkgs, metadata, ... }:
 
 {
   imports =
@@ -71,6 +71,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "${metadata.username}"];
+  nix.settings.netrc-path = "/etc/nix/netrc";
 
   programs.gnupg.agent = {
     enable = true;
@@ -80,6 +81,8 @@
   virtualisation.docker.enable = true;
 
   system.stateVersion = "24.05";
+
+  environment.systemPackages = [ xclj-pkgs.default ];
 
   fonts.packages = with pkgs; [ source-code-pro ];
 
