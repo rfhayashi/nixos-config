@@ -1,4 +1,4 @@
-{ config, pkgs, xclj-pkgs, metadata, ... }:
+{ pkgs, xclj-pkgs, metadata, ... }:
 
 {
   imports =
@@ -71,13 +71,6 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["${metadata.username}"];
-
-  sops.secrets.nix-access-tokens = {
-    mode = "0440";
-    group = config.users.groups.keys.name;
-  };
-  # TODO try NIX_CONFIG to avoid chicken-egg
-  nix.extraOptions = "!include ${config.sops.secrets.nix-access-tokens.path}";
 
   programs.gnupg.agent = {
     enable = true;

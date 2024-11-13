@@ -32,7 +32,6 @@ Add
 
 ```
 nix.settings.experimental-features = ["nix-command" "flakes"];
-nix.settings.access-tokens = "github.com=<github_token>";
 ```
 
 to `/etc/nixos/configuration.nix` and run `sudo nixos-rebuild switch`.
@@ -62,7 +61,7 @@ bin/fetch-age-key
 
 Copy `/etc/nixos/hardware-configuration.nix` over `system/hardware.nix`.
 
-Run `nix-shell -p git --command "sudo nixos-rebuild switch --flake ."` to finish installation.
+Run `nix-shell -p git --command "NIX_CONFIG=\"extra-access-tokens= github.com=<github_token>\" sudo nixos-rebuild switch --flake ."` to finish installation.
 
 ## After installation
 
