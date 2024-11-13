@@ -43,6 +43,17 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.xserver.displayManager.session = [
+    {
+      manage = "window";
+      name = "xclj";
+      start = ''
+       ${xclj-pkgs.default}/bin/xclj &
+       waitPID=$!
+      '';
+    }
+  ];
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -80,8 +91,6 @@
   virtualisation.docker.enable = true;
 
   system.stateVersion = "24.05";
-
-  environment.systemPackages = [ xclj-pkgs.default ];
 
   fonts.packages = with pkgs; [ source-code-pro ];
 
