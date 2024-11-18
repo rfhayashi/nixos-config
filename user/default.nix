@@ -15,4 +15,9 @@
     discord
     zoom-us
   ];
+
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 }
