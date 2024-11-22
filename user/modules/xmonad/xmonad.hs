@@ -7,7 +7,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.SpawnOnce
 import XMonad.Actions.Commands
 
-ulauncher = spawn "ulauncher"
+launcher = spawn "rofi -show drun"
 
 main = xmonad $ docks $ def
          {
@@ -24,7 +24,7 @@ main = xmonad $ docks $ def
           ,("M-S-l", confirmPrompt def "logout" $ io exitSuccess)
           ,("M-S-r", confirmPrompt def "reboot" $ spawn "reboot")
           ,("M-S-p", confirmPrompt def "poweroff" $ spawn "poweroff")
-          ,("M-p", ulauncher)
+          ,("M-p", launcher)
           ,("M-<Escape>", spawn "xlock -mode blank")
           ,("M-S-<Backspace>", spawn "switch-keyboard-layout")
           ,("M-S-s", spawn "cd ~/Downloads && scrot --select")

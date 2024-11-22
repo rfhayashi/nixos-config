@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ...}:
+{ lib, config, pkgs, metadata, ...}:
 with lib;
 let
   cfg = config.rfhayashi.xmonad;
@@ -21,7 +21,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       dmenu
-      ulauncher
+      rofi
       eww
       xlockmore
       scrot
@@ -50,6 +50,12 @@ in
     };
 
     services.blueman-applet.enable = true;
+
+    home.file.".config/rofi/config.rasi".text = ''
+      configuration {
+      }
+      @theme "arthur"
+    '';
 
     home.file.".config/eww".source = ./eww;
 
