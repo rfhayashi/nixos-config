@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "gcap2024";
-  version = "1.2";
+  version = "1.3";
 
   src = fetchzip {
     url = "https://downloadirpf.receita.fazenda.gov.br/irpf/2024/gcap/GCAP2024v${finalAttrs.version}.zip";
-    sha256 = "sha256-c6JzAnm/fRF9ppc/FYrJCv4zq9mhqln97vf/aTi3scU=";
+    sha256 = "sha256-2kdvKlaR3hRESDmPc0/kV1k3CrLZ5/WZIG+ue6Mqg5c=";
   };
 
   nativeBuildInputs = [ copyDesktopItems ];
