@@ -14,6 +14,7 @@
     local-pkgs.gcap
     discord
     zoom-us
+    nyxt
   ];
 
   programs.vim = {
