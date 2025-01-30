@@ -1,5 +1,6 @@
 { pkgs, ...}:
 let
+  # TODO move this to github:rfhayashi/devshells
   devshell = pkgs.writeShellScriptBin "devshell" ''
     if [ ! -f .envrc ]; then
       echo "use flake \"github:rfhayashi/devshells?dir=$1\"" >> .envrc
