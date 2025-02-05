@@ -1,5 +1,27 @@
 {
   "nodes": {
+    "devshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "devshell",
+        "lastModified": 1738780870,
+        "narHash": "sha256-Re+LwdCE3KYjkv5NI0afKmgM73rV0y7PMw0j680y8TM=",
+        "owner": "rfhayashi",
+        "repo": "devshells",
+        "rev": "376cfecb4d90c4ef2763beeb978b84489e33ba9f",
+        "type": "github"
+      },
+      "original": {
+        "dir": "devshell",
+        "owner": "rfhayashi",
+        "repo": "devshells",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -71,6 +93,7 @@
     },
     "root": {
       "inputs": {
+        "devshell": "devshell",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix"
