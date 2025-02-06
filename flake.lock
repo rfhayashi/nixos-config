@@ -8,11 +8,11 @@
       },
       "locked": {
         "dir": "devshell",
-        "lastModified": 1738788880,
-        "narHash": "sha256-hPdsR+HIOloJqL8PIgHodGvWgxQJ0vnzJpou4NRFyi8=",
+        "lastModified": 1738791418,
+        "narHash": "sha256-6Oe6lkjDxNu36mnTi3tICly5xEP0PuT64nBv36R9MJs=",
         "owner": "rfhayashi",
         "repo": "devshells",
-        "rev": "474c2845ef1a946deb82cb1fbeaa2961a68c0dfa",
+        "rev": "f34a5b85647c0db041be3e02b2c3fe7562d234cf",
         "type": "github"
       },
       "original": {
