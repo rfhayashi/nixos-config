@@ -1,12 +1,12 @@
 { stdenv, fetchzip, makeDesktopItem, copyDesktopItems, openjdk, bash, ... }:
 
 stdenv.mkDerivation (finalAttrs: {
-  pname = "gcap2024";
-  version = "1.3";
+  pname = "gcap2025";
+  version = "1.1";
 
   src = fetchzip {
-    url = "https://downloadirpf.receita.fazenda.gov.br/irpf/2024/gcap/GCAP2024v${finalAttrs.version}.zip";
-    sha256 = "sha256-2kdvKlaR3hRESDmPc0/kV1k3CrLZ5/WZIG+ue6Mqg5c=";
+    url = "https://downloadirpf.receita.fazenda.gov.br/irpf/2025/gcap/GCAP2025v${finalAttrs.version}.zip";
+    sha256 = "sha256-PrtHEwfmAbRyQ7DedB3MLH7mN7tH9eoJSELjvge8rak=";
   };
 
   nativeBuildInputs = [ copyDesktopItems ];
@@ -28,8 +28,8 @@ stdenv.mkDerivation (finalAttrs: {
     (makeDesktopItem {
       name = "gcap";
       exec = "gcap";
-      desktopName = "GCAP 2024";
-      genericName = "GCAP 2024";
+      desktopName = "GCAP 2025";
+      genericName = "GCAP 2025";
     })
   ];
 
