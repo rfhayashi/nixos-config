@@ -25,6 +25,8 @@
     };
   };
 
+  # TODO this is commented because it blocks gpg
+
   # home.activation = {
   #   import-git-gpg-key = lib.hm.dag.entryAfter ["writeBoundary"] ''
   #     run ${pkgs.sops}/bin/sops --decrypt ${../../../secrets.yaml} \
