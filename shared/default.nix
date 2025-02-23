@@ -1,4 +1,4 @@
 { ... }:
 {
-  rfhayashi.xmonad.enable = true;
+  rfhayashi.i3.enable = true;
 }
