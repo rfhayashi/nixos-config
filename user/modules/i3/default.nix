@@ -49,6 +49,9 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec ${pkgs.alacritty}/bin/alacritty
 
+# start the browser
+bindsym $mod+Shift+Return exec ${pkgs.firefox}/bin/firefox
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
