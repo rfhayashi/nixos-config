@@ -23,6 +23,8 @@ in
       alsa-utils
       alacritty
       blueman
+    ] ++
+    [
       local-pkgs.switch-keyboard-layout
     ];
 
