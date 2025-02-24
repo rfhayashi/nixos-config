@@ -21,6 +21,12 @@ set $mod Mod1
 
 font pango:Source Code Pro 8
 
+# colors
+client.focused              #688060 #688060 #DCDCCC #ffcfaf
+client.focused_inactive     #3f3f3f #3F3F3F #7f9f7f #3f3f3f
+client.unfocused            #3f3f3f #3F3F3F #DCDCCC #3f3f3f
+client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id ${pkgs.xss-lock}/bin/xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -209,6 +215,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         tray_output primary
+        colors {
+          background #3f3f3f
+          statusline #dcdccc
+
+          focused_workspace  #93b3a3 #3f3f3f #93b3a3
+          active_workspace   #ffcfaf #3f3f3f #ffcfaf
+          inactive_workspace #636363 #3f3f3f #dcdccc
+          urgent_workspace   #dca3a3 #3f3f3f #dca3a3
+        }
 }
 '';  
   };
