@@ -31,6 +31,9 @@ exec --no-startup-id autorandr --change
 # Battery Status
 exec --no-startup-id ${pkgs.cbatticon}/bin/cbatticon
 
+# Bluetooth
+exec --no-startup-id ${pkgs.blueman}/bin/blueman-applet
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
