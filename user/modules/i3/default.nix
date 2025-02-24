@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ...}:
+{ lib, config, pkgs, local-pkgs, ...}:
 with lib;
 let
   cfg = config.rfhayashi.i3;
@@ -72,6 +72,9 @@ bindsym $mod+Shift+q kill
 
 # launcher
 bindsym $mod+p exec ${pkgs.rofi}/bin/rofi -show drun
+
+# switch keyboard layout
+bindsym $mod+Shift+BackSpace exec --no-startup-id ${local-pkgs.switch-keyboard-layout}/bin/switch-keyboard-layout
 
 # change focus
 bindsym $mod+$left focus left
