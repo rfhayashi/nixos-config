@@ -10,6 +10,12 @@ in
   };
 
   config = mkIf cfg.enable {
+    home.file.".config/rofi/config.rasi".text = ''
+      configuration {
+      }
+      @theme "arthur"
+    '';
+
     home.file.".config/i3/config".text = ''
 set $mod Mod1
 
