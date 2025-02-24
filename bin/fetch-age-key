@@ -1,6 +1,8 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash -p bitwarden-cli
 
+# TODO make this reproductible (e.g. nix shell nixpkgs/<rev>#bitwarden-cli)
+
 set -e
 
 bw login || true
