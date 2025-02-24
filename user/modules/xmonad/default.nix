@@ -48,7 +48,5 @@ in
     '';
 
     home.file.".config/eww".source = ./eww;
-
-    home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
   };
 }
