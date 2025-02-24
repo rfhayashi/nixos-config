@@ -29,7 +29,7 @@ client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id ${pkgs.xss-lock}/bin/xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id ${pkgs.xss-lock}/bin/xss-lock -- sh -c "i3lock -n -c 000000 && xset dpms force off"
 
 bindsym $mod+Escape exec --no-startup-id loginctl lock-session
 
