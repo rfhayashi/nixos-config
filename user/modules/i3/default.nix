@@ -25,6 +25,9 @@ bindsym $mod+Escape exec --no-startup-id loginctl lock-session
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id ${pkgs.networkmanagerapplet}/bin/nm-applet
 
+# Autorandr
+exec --no-startup-id autorandr --change
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -190,6 +193,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        tray_output primary
 }
 '';  
   };
