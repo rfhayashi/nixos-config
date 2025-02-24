@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.rfhayashi.i3;
-  i3status = ./i3status.conf;
+  i3status-conf = ./i3status.conf;
 in
 {
   options.rfhayashi.i3 = {
@@ -215,7 +215,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status --config ${i3status}
+        status_command i3status --config ${i3status-conf}
         tray_output primary
         colors {
           background #3f3f3f
