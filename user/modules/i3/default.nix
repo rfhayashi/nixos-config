@@ -23,7 +23,7 @@ bindsym $mod+Escape exec --no-startup-id loginctl lock-session
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec --no-startup-id ${pkgs.networkmanagerapplet}/bin/nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
