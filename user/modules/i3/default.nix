@@ -14,6 +14,10 @@ in
 
     home.file.".config/rofi/config.rasi".text = ''
       configuration {
+        kb-row-up: "Up,Control+k";
+        kb-row-down: "Down,Control+j";
+        kb-remove-to-eol: "";
+        kb-accept-entry: "Control+m,Return,KP_Enter";
       }
       @theme "arthur"
     '';
