@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     local-pkgs.poweroff
     local-pkgs.reboot
+    local-pkgs.logout
     local-pkgs.gcap
     discord
     zoom-us
