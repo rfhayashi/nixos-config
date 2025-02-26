@@ -12,6 +12,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ libnotify notify-osd ];
 
+    # kept here if we decide to use rofi again
     home.file.".config/rofi/config.rasi".text = ''
       configuration {
         kb-row-up: "Up,Control+k";
@@ -55,6 +56,9 @@ exec --no-startup-id ${pkgs.blueman}/bin/blueman-applet
 # Volume
 exec --no-startup-id ${pkgs.pasystray}/bin/pasystray
 
+# Ulauncher
+exec --no-startup-id ${pkgs.ulauncher}/bin/ulauncher
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -10%
@@ -87,9 +91,6 @@ bindsym $mod+Shift+Return exec ${pkgs.firefox}/bin/firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# launcher
-bindsym $mod+p exec ${pkgs.rofi}/bin/rofi -show drun
 
 # window switch
 bindsym $mod+Shift+p exec ${pkgs.rofi}/bin/rofi -show window
