@@ -43,6 +43,15 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.picom = {
+    enable = true;
+    vSync = true;
+    backend = "glx";
+    opacityRules = [
+      "100:class_g = 'Ulauncher'"
+    ];
+  };
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
