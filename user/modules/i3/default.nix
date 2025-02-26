@@ -10,6 +10,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [ libnotify notify-osd ];
+
     home.file.".config/rofi/config.rasi".text = ''
       configuration {
       }
