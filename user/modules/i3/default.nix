@@ -91,6 +91,9 @@ bindsym $mod+Shift+q kill
 # launcher
 bindsym $mod+p exec ${pkgs.rofi}/bin/rofi -show drun
 
+# window switch
+bindsym $mod+Shift+p exec ${pkgs.rofi}/bin/rofi -show window
+
 # i3-input
 bindsym $mod+i exec i3-input
 
