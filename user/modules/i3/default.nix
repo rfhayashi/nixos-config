@@ -227,6 +227,11 @@ bar {
           urgent_workspace   #dca3a3 #3f3f3f #dca3a3
         }
 }
+
+# assignments
+assign [class="Xephyr"] output nonprimary
+assign [class="Xephyr"] output primary
+for_window [class="Xephyr"] floating toggle
 '';  
   };
 }
