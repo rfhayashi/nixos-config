@@ -3,6 +3,9 @@ let
   poweroff-script = pkgs.writeShellScriptBin "poweroff" ''
     ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to power off?' -B 'Yes, power off' 'poweroff'  
   '';
+  reboot-script = pkgs.writeShellScriptBin "reboot" ''
+    ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to reboot?' -B 'Yes, reboot' 'reboot'
+  '';
 in
 rec {
   helpers = (import ./helpers.nix) { inherit pkgs; };
@@ -13,6 +16,12 @@ rec {
     name = "poweroff";
     exec = "${poweroff-script}/bin/poweroff";
     desktopName = "Power off";
+  };
+
+  reboot = helpers.desktopItem {
+    name = "reboot";
+    exec = "${reboot-script}/bin/reboot";
+    desktopName = "Reboot";
   };
 
   switch-keyboard-layout = pkgs.writeScriptBin "switch-keyboard-layout" ''
