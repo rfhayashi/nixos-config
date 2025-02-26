@@ -11,6 +11,7 @@
   programs.home-manager.enable = true;
   
   home.packages = with pkgs; [
+    local-pkgs.poweroff
     local-pkgs.gcap
     discord
     zoom-us
