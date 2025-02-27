@@ -9,28 +9,43 @@ let
   logout-script = pkgs.writeShellScriptBin "logout" ''
     ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to logout?' -B 'Yes, logout' 'logout'
   '';
+  suspend-script = pkgs.writeShellScriptBin "suspend" ''
+    systemctl suspend
+  '';
 in
 rec {
   helpers = (import ./helpers.nix) { inherit pkgs; };
 
   gcap = pkgs.callPackage ./gcap {};
 
-  poweroff = helpers.desktopItem {
+  poweroff-desktop-item = helpers.desktopItem {
     name = "poweroff";
     exec = "${poweroff-script}/bin/poweroff";
     desktopName = "Power off";
+    icon = "${./icons/system-shutdown-svgrepo-com.svg}";
   };
 
-  reboot = helpers.desktopItem {
+  reboot-desktop-item = helpers.desktopItem {
     name = "reboot";
     exec = "${reboot-script}/bin/reboot";
     desktopName = "Reboot";
+    icon = "${./icons/system-reboot-svgrepo-com.svg}";
   };
 
-  logout = helpers.desktopItem {
+  logout-desktop-item = helpers.desktopItem {
     name = "logout";
     exec = "${logout-script}/bin/logout";
     desktopName = "Logout";
+    icon = "${./icons/logout-svgrepo-com.svg}";
+  };
+
+  suspend = suspend-script;
+
+  suspend-desktop-item = helpers.desktopItem {
+    name = "suspend";
+    exec = "${suspend-script}/bin/suspend";
+    desktopName = "Suspend";
+    icon = "${./icons/screen-suspend-svgrepo-com.svg}";
   };
 
   switch-keyboard-layout = pkgs.writeScriptBin "switch-keyboard-layout" ''

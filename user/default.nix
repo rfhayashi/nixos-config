@@ -11,9 +11,10 @@
   programs.home-manager.enable = true;
   
   home.packages = with pkgs; [
-    local-pkgs.poweroff
-    local-pkgs.reboot
-    local-pkgs.logout
+    local-pkgs.poweroff-desktop-item
+    local-pkgs.reboot-desktop-item
+    local-pkgs.logout-desktop-item
+    local-pkgs.suspend-desktop-item
     local-pkgs.gcap
     discord
     zoom-us
