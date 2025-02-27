@@ -10,7 +10,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ libnotify notify-osd ];
+    home.packages = with pkgs; [ libnotify notify-osd wmctrl ];
 
     # kept here if we decide to use rofi again
     home.file.".config/rofi/config.rasi".text = ''
