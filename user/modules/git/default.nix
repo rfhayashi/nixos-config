@@ -32,10 +32,4 @@ in
     };
   };
 
-  home.activation = {
-    import-git-gpg-key = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      run ${import-git-gpg-key}/bin/import
-    '';
-  };
-
 }
