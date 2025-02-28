@@ -1,6 +1,6 @@
 { lib, config, pkgs, local-pkgs, ...}:
-with lib;
 let
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.rfhayashi.i3;
   i3status-conf = ./i3status.conf;
 in
