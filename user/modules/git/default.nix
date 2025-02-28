@@ -1,11 +1,4 @@
 { lib, config, pkgs, metadata, ...}:
-let
-  import-git-gpg-key = pkgs.writeShellScriptBin "import" ''
-    ${pkgs.sops}/bin/sops --decrypt ${../../../secrets.yaml} \
-       | ${pkgs.yq}/bin/yq -r .git.gpg_key \
-       | ${pkgs.gnupg}/bin/gpg --batch --import
-  '';
-in
 {
   programs.gh.enable = true;
 
