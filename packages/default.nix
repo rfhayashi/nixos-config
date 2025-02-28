@@ -13,26 +13,24 @@ let
     systemctl suspend
   '';
 in
-rec {
-  helpers = (import ./helpers.nix) { inherit pkgs; };
-
+{
   gcap = pkgs.callPackage ./gcap {};
 
-  poweroff-desktop-item = helpers.desktopItem {
+  poweroff-desktop-item = pkgs.makeDesktopItem {
     name = "poweroff";
     exec = "${poweroff-script}/bin/poweroff";
     desktopName = "Power off";
     icon = "${./icons/system-shutdown-svgrepo-com.svg}";
   };
 
-  reboot-desktop-item = helpers.desktopItem {
+  reboot-desktop-item = pkgs.makeDesktopItem {
     name = "reboot";
     exec = "${reboot-script}/bin/reboot";
     desktopName = "Reboot";
     icon = "${./icons/system-reboot-svgrepo-com.svg}";
   };
 
-  logout-desktop-item = helpers.desktopItem {
+  logout-desktop-item = pkgs.makeDesktopItem {
     name = "logout";
     exec = "${logout-script}/bin/logout";
     desktopName = "Logout";
@@ -41,7 +39,7 @@ rec {
 
   suspend = suspend-script;
 
-  suspend-desktop-item = helpers.desktopItem {
+  suspend-desktop-item = pkgs.makeDesktopItem {
     name = "suspend";
     exec = "${suspend-script}/bin/suspend";
     desktopName = "Suspend";
