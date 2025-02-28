@@ -219,6 +219,9 @@ bar {
           urgent_workspace   #dca3a3 #3f3f3f #dca3a3
         }
 }
+
+# window rules
+for_window [class="^Alacritty$"] floating enable
 '';  
   };
 }
