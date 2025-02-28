@@ -1,4 +1,11 @@
 { lib, config, pkgs, metadata, ...}:
+let
+  import-git-gpg-key = pkgs.writeShellScriptBin "import" ''
+    ${pkgs.sops}/bin/sops --decrypt ${../../../secrets.yaml} \
+       | ${pkgs.yq}/bin/yq -r .git.gpg_key \
+       | ${pkgs.gnupg}/bin/gpg --batch --import
+  '';
+in
 {
   programs.gh.enable = true;
 
@@ -25,12 +32,10 @@
     };
   };
 
-  # home.activation = {
-  #   import-git-gpg-key = lib.hm.dag.entryAfter ["writeBoundary"] ''
-  #     run ${pkgs.sops}/bin/sops --decrypt ${../../../secrets.yaml} \
-  #     | ${pkgs.yq}/bin/yq -r .git.gpg_key \
-  #     | ${pkgs.gnupg}/bin/gpg --batch --import
-  #   '';
-  # };
+  home.activation = {
+    import-git-gpg-key = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      run ${import-git-gpg-key}/bin/import
+    '';
+  };
 
 }
