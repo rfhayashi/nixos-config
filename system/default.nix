@@ -5,7 +5,6 @@
     [
       ./hardware.nix
       ./modules
-      ../shared
     ];
 
   nix.gc = {
@@ -43,6 +42,7 @@
 
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  rfhayashi.i3.enable = true;
 
   services.picom = {
     enable = true;

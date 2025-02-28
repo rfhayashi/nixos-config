@@ -1,14 +1,10 @@
-{ lib, config, pkgs, local-pkgs, ...}:
+{ lib, osConfig, pkgs, local-pkgs, ...}:
 let
-  inherit (lib) mkEnableOption mkIf;
-  cfg = config.rfhayashi.i3;
+  inherit (lib) mkIf;
+  cfg = osConfig.rfhayashi.i3;
   i3status-conf = ./i3status.conf;
 in
 {
-  options.rfhayashi.i3 = {
-    enable = mkEnableOption "i3";
-  };
-
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ libnotify notify-osd wmctrl ];
 
