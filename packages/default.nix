@@ -1,15 +1,6 @@
 { pkgs, ... }:
 let
-  poweroff-script = pkgs.writeShellScriptBin "poweroff" ''
-    ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to power off?' -B 'Yes, power off' 'poweroff'  
-  '';
-  reboot-script = pkgs.writeShellScriptBin "reboot" ''
-    ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to reboot?' -B 'Yes, reboot' 'reboot'
-  '';
-  logout-script = pkgs.writeShellScriptBin "logout" ''
-    ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to logout?' -B 'Yes, logout' 'logout'
-  '';
-  suspend-script = pkgs.writeShellScriptBin "suspend" ''
+  suspend-script = pkgs.writeShellScript "suspend" ''
     systemctl suspend
   '';
 in
@@ -18,21 +9,27 @@ in
 
   poweroff-desktop-item = pkgs.makeDesktopItem {
     name = "poweroff";
-    exec = "${poweroff-script}/bin/poweroff";
+    exec = pkgs.writeShellScript "poweroff" ''
+      ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to power off?' -B 'Yes, power off' 'poweroff'  
+    '';
     desktopName = "Power off";
     icon = "${./icons/system-shutdown-svgrepo-com.svg}";
   };
 
   reboot-desktop-item = pkgs.makeDesktopItem {
     name = "reboot";
-    exec = "${reboot-script}/bin/reboot";
+    exec = pkgs.writeShellScript "reboot" ''
+      ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to reboot?' -B 'Yes, reboot' 'reboot'
+    '';
     desktopName = "Reboot";
     icon = "${./icons/system-reboot-svgrepo-com.svg}";
   };
 
   logout-desktop-item = pkgs.makeDesktopItem {
     name = "logout";
-    exec = "${logout-script}/bin/logout";
+    exec = pkgs.writeShellScript "logout" ''
+      ${pkgs.i3}/bin/i3-nagbar -t warning -m 'Do you really want to logout?' -B 'Yes, logout' 'logout'
+    '';
     desktopName = "Logout";
     icon = "${./icons/logout-svgrepo-com.svg}";
   };
@@ -41,7 +38,7 @@ in
 
   suspend-desktop-item = pkgs.makeDesktopItem {
     name = "suspend";
-    exec = "${suspend-script}/bin/suspend";
+    exec = suspend-script;
     desktopName = "Suspend";
     icon = "${./icons/screen-suspend-svgrepo-com.svg}";
   };
