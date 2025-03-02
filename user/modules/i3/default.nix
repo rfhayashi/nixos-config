@@ -53,6 +53,9 @@ exec --no-startup-id ${pkgs.blueman}/bin/blueman-applet
 # Volume
 exec --no-startup-id ${pkgs.pasystray}/bin/pasystray
 
+# Launcher
+exec --no-startup-id systemctl --user start ulauncher
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -10%

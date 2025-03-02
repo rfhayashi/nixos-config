@@ -32,5 +32,13 @@ in
       desktopName = "Suspend";
       icon = "${./icons/screen-suspend-svgrepo-com.svg}";
     }
+    {
+      name = "restart-ulauncher";
+      exec = pkgs.writeShellScript "restart-ulauncher" ''
+        systemctl --user restart ulauncher
+      '';
+      desktopName = "Restart Ulauncher";
+      icon = "${./icons/ulauncher.svg}";
+    }
   ];
 }

@@ -28,13 +28,13 @@ in
   systemd.user.services = {
     ulauncher = {
       Unit = {
-        After = ["graphical.target"];
+        Description = "Ulauncher service";
+        Documentation = ["https://ulauncher.io/"];
+        After = ["graphical-session.target"];
       };
       Service = {
-        ExecStart = "${pkgs.ulauncher}/bin/ulauncher";
-      };
-      Install = {
-        WantedBy = ["default.target"];
+        Type = "simple";
+        ExecStart = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
       };
     };
   };
