@@ -32,7 +32,6 @@ in
         After = ["graphical.target"];
       };
       Service = {
-        Type = "simple";
         ExecStart = "${pkgs.ulauncher}/bin/ulauncher";
       };
       Install = {
