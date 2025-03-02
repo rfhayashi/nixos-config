@@ -28,7 +28,6 @@ in
   systemd.user.services = {
     ulauncher = {
       Unit = {
-        Description = "Ulauncher service";
         After = ["graphical.target"];
       };
       Service = {
