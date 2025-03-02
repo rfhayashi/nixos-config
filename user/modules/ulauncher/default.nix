@@ -24,4 +24,20 @@ in
       "theme-name": "Adwaita Darkish"
     }
   '';
+
+  systemd.user.services = {
+    ulauncher = {
+      Unit = {
+        Description = "Ulauncher service";
+        After = ["graphical.target"];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.ulauncher}/bin/ulauncher";
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+    };
+  };
 }
