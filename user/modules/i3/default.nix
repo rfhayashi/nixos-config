@@ -158,17 +158,21 @@ bindsym $mod+minus scratchpad show
 # workspaces
 set $ws_editor "3: editor"
 set $ws_monitor "1: monitor"
+set $ws_web "4: web"
 
 workspace $ws_editor output primary
 workspace $ws_monitor output nonprimary primary
+workspace $ws_web output nonprimary primary
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws_monitor
 bindsym $mod+3 workspace number $ws_editor
+bindsym $mod+4 workspace number $ws_web
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws_monitor
 bindsym $mod+Shift+3 move container to workspace number $ws_editor
+bindsym $mod+Shift+4 move container to workspace number $ws_web
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
