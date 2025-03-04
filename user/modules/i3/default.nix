@@ -6,7 +6,7 @@ let
 in
 {
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ libnotify notify-osd wmctrl ];
+    home.packages = with pkgs; [ libnotify notify-osd wmctrl blueman ];
 
     # kept here if we decide to use rofi again
     home.file.".config/rofi/config.rasi".text = ''
