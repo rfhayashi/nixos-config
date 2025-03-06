@@ -12,25 +12,25 @@ in
       name = "poweroff";
       exec = confirm "poweroff" "power off" "poweroff";
       desktopName = "Power off";
-      icon = "${./icons/system-shutdown-svgrepo-com.svg}";
+      icon = ./icons/system-shutdown-svgrepo-com.svg;
     }
     {
       name = "reboot";
       exec = confirm "reboot" "reboot" "reboot";
       desktopName = "Reboot";
-      icon = "${./icons/system-reboot-svgrepo-com.svg}";
+      icon = ./icons/system-reboot-svgrepo-com.svg;
     }
     {
       name = "logout";
       exec = confirm "logout" "logout" "logout";
       desktopName = "Logout";
-      icon = "${./icons/logout-svgrepo-com.svg}";
+      icon = ./icons/logout-svgrepo-com.svg;
     }
     {
       name = "suspend";
       exec = local-pkgs.suspend;
       desktopName = "Suspend";
-      icon = "${./icons/screen-suspend-svgrepo-com.svg}";
+      icon = ./icons/screen-suspend-svgrepo-com.svg;
     }
     {
       name = "restart-ulauncher";
@@ -38,7 +38,7 @@ in
         systemctl --user restart ulauncher
       '';
       desktopName = "Restart Ulauncher";
-      icon = "${./icons/ulauncher.svg}";
+      icon = ./icons/ulauncher.svg;
     }
     {
       name = "screenshot";
