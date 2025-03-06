@@ -40,5 +40,13 @@ in
       desktopName = "Restart Ulauncher";
       icon = "${./icons/ulauncher.svg}";
     }
+    {
+      name = "screenshot";
+      exec = pkgs.writeShellScript "screenshot" ''
+        ${pkgs.gnome-screenshot}/bin/gnome-screenshot --interactive
+      '';
+      desktopName = "Screenshot";
+      icon = ./icons/screenshot-svgrepo-com.svg;
+    }
   ];
 }
