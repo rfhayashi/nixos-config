@@ -15,6 +15,7 @@
     discord
     zoom-us
     nyxt
+    todoist-electron
   ];
 
   programs.vim = {
