@@ -30,6 +30,7 @@ stdenv.mkDerivation (finalAttrs: {
       exec = "gcap";
       desktopName = "GCAP 2025";
       genericName = "GCAP 2025";
+      icon = ./Logo_Receita_Federal_do_Brasil.svg;
     })
   ];
 
