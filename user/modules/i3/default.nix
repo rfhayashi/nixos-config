@@ -156,21 +156,25 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # workspaces
-set $ws_editor "3: editor"
 set $ws_monitor "1: monitor"
+set $ws_todo "2: todo"
+set $ws_editor "3: editor"
 set $ws_web "4: web"
 
 workspace $ws_editor output primary
+workspace $ws_todo output primary
 workspace $ws_monitor output nonprimary primary
 workspace $ws_web output nonprimary primary
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws_monitor
+bindsym $mod+2 workspace number $ws_todo
 bindsym $mod+3 workspace number $ws_editor
 bindsym $mod+4 workspace number $ws_web
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws_monitor
+bindsym $mod+Shift+2 move container to workspace number $ws_todo
 bindsym $mod+Shift+3 move container to workspace number $ws_editor
 bindsym $mod+Shift+4 move container to workspace number $ws_web
 
@@ -226,6 +230,15 @@ bar {
 
 # window rules
 for_window [class="^Alacritty$"] floating enable
+assign [class="^Emacs$"] $ws_editor
+assign [class="^Todoist$"] $ws_todo
+assign [class="^firefox$"] $ws_web
+
+# start programs
+exec ${pkgs.todoist-electron}/bin/todoist-electron
+exec ${pkgs.emacs}/bin/emacs
+exec ${pkgs.firefox}/bin/firefox
+
 '';  
   };
 }
