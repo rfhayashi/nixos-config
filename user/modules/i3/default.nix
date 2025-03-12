@@ -231,11 +231,10 @@ bar {
 # window rules
 for_window [class="^Alacritty$"] floating enable
 assign [class="^Emacs$"] $ws_editor
-assign [class="^Todoist$"] $ws_todo
+assign [instance="^app.todoist.com$"] $ws_todo
 assign [class="^firefox$"] $ws_web
 
 # start programs
-exec ${pkgs.todoist-electron}/bin/todoist-electron
 exec ${pkgs.emacs}/bin/emacs
 exec ${pkgs.firefox}/bin/firefox
 
