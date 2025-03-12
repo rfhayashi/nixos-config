@@ -1,6 +1,11 @@
 { ... }:
 {
   rfhayashi.chromiumApps = {
+    chatgpt = {
+      desktopName = "Chat GPT";
+      url = "https://chatgpt.com";
+      icon = ./icons/chatgpt-icon.svg;
+    };
     todoist = {
       desktopName = "Todoist";
       url = "https://app.todoist.com";
