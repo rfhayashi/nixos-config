@@ -75,11 +75,28 @@
         "type": "github"
       }
     },
+    "portal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736648104,
+        "narHash": "sha256-jUeT9I5HmZFmwdMCd7LGRsiMEQRDz9jmMZ1v0k2E4pA=",
+        "owner": "djblue",
+        "repo": "portal",
+        "rev": "6ddbc0d3d54dd6a5aab923afd81cdd34b41c81eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "djblue",
+        "repo": "portal",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "devshell": "devshell",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "portal": "portal",
         "sops-nix": "sops-nix"
       }
     },
