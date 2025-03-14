@@ -88,6 +88,8 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; # required by virtualbox
 
   system.stateVersion = "24.05";
 
