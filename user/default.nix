@@ -11,10 +11,10 @@
   programs.home-manager.enable = true;
   
   home.packages = with pkgs; [
-    local-pkgs.gcap
     discord
     zoom-us
     nyxt
+    google-chrome
   ];
 
   programs.vim = {

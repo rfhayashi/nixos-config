@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  gcap = pkgs.callPackage ./gcap {};
+  rfb = import ./rfb { inherit pkgs; };
 
   suspend = pkgs.writeShellScript "suspend" ''
     systemctl suspend
