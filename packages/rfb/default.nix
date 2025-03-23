@@ -37,11 +37,21 @@ let
     });
 in
 {
+  gcap2024 = rfbProgram rec {
+    name = "gcap24";
+    year = "2024";
+    version = "1.5";
+    url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP${year}v${version}.zip";
+    sha256 = "sha256-XMFnJhtpAw1KojPI4l2BOsrtXcVygcEgAz37hucxRb4=";
+    jarName = "GCAP";
+    desktopName = "GCAP";
+  };
+
   gcap = rfbProgram rec {
     name = "gcap";
     year = "2025";
     version = "1.1";
-    url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP2025v${version}.zip";
+    url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP${year}v${version}.zip";
     sha256 = "sha256-PrtHEwfmAbRyQ7DedB3MLH7mN7tH9eoJSELjvge8rak=";
     jarName = "GCAP";
     desktopName = "GCAP";
