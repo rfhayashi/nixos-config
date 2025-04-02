@@ -15,6 +15,7 @@
     zoom-us
     nyxt
     google-chrome
+    jq
   ];
 
   programs.vim = {
