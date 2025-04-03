@@ -22,6 +22,7 @@
     userEmail = metadata.email;
     extraConfig = {
       gpg.format = "ssh";
+      push.autoSetupRemote = true;
     };
     signing = {
       signByDefault = true;
