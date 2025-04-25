@@ -1,4 +1,4 @@
-{ pkgs, local-pkgs, ...}:
+{ pkgs, ...}:
 let
   confirm = (name: verb: command:
     pkgs.writeShellScript name ''
@@ -28,7 +28,7 @@ in
     }
     {
       name = "suspend";
-      exec = local-pkgs.suspend;
+      exec = pkgs.suspend;
       desktopName = "Suspend";
       icon = ./icons/screen-suspend-svgrepo-com.svg;
     }

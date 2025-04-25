@@ -1,4 +1,4 @@
-{ pkgs, metadata, local-pkgs, ... }:
+{ pkgs, metadata, ... }:
 
 {
   home.username = metadata.username;

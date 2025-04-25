@@ -1,4 +1,4 @@
-{ lib, osConfig, pkgs, local-pkgs, ...}:
+{ lib, osConfig, pkgs, ...}:
 let
   inherit (lib) mkIf;
   cfg = osConfig.rfhayashi.i3;
@@ -35,7 +35,7 @@ client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id ${pkgs.xss-lock}/bin/xss-lock -- sh -c "i3lock -n -c 000000 && xset dpms force off"
 
-bindsym $mod+Escape exec --no-startup-id ${local-pkgs.suspend}
+bindsym $mod+Escape exec --no-startup-id ${pkgs.suspend}
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -96,7 +96,7 @@ bindsym $mod+Shift+p exec ${pkgs.rofi}/bin/rofi -show window
 bindsym $mod+i exec i3-input
 
 # switch keyboard layout
-bindsym $mod+Shift+BackSpace exec --no-startup-id ${local-pkgs.switch-keyboard-layout}/bin/switch-keyboard-layout
+bindsym $mod+Shift+BackSpace exec --no-startup-id ${pkgs.switch-keyboard-layout}/bin/switch-keyboard-layout
 
 # change focus
 bindsym $mod+$left focus left

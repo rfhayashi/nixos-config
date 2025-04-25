@@ -1,4 +1,4 @@
-{ lib, config, pkgs, local-pkgs, ...}:
+{ lib, config, pkgs, ...}:
 with lib;
 let
   cfg = config.rfhayashi.xmonad;
@@ -23,9 +23,7 @@ in
       alsa-utils
       alacritty
       blueman
-    ] ++
-    [
-      local-pkgs.switch-keyboard-layout
+      switch-keyboard-layout
     ];
 
     xsession.windowManager.xmonad = {

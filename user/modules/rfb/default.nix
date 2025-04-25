@@ -1,6 +1,6 @@
-{ local-pkgs, metadata, ... }:
+{ pkgs, metadata, ... }:
 {
-  home.packages = [ local-pkgs.rfb.gcap2024 local-pkgs.rfb.gcap local-pkgs.rfb.irpf ];
+  home.packages = [ pkgs.rfb.gcap2024 pkgs.rfb.gcap pkgs.rfb.irpf ];
 
   services.git-sync = {
     enable = true;
