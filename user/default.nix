@@ -2,7 +2,7 @@
 
 {
   home.username = config.metadata.username;
-  home.homeDirectory = config.metadata.home-dir;
+  home.homeDirectory = config.metadata.homeDir;
 
   home.stateVersion = "24.05";
 

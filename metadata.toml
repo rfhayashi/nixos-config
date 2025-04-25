@@ -1,6 +1,0 @@
-username = "rfhayashi"
-fullname = "Rui Fernando Hayashi"
-email = "rfhayashi@gmail.com"
-
-[clojure-portal]
-version="0.58.5"

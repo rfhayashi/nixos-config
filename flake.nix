@@ -13,23 +13,14 @@
   outputs = { self, nixpkgs, sops-nix, home-manager, devshell, ... }@inputs:
     let
       system = "x86_64-linux";
-      base-metadata = (nixpkgs.lib.modules.importTOML ./metadata.toml).config;
-      metadata-module = {
-          options = {
-            metadata = nixpkgs.lib.mkOption {
-              type = nixpkgs.lib.types.attrs;
-            };
-          };
-          config = {
-            metadata = base-metadata // { home-dir = "/home/${base-metadata.username}"; };
-          };
-        };
+      metadata = import ./metadata.nix;
     in
     {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        metadata-module 
+        ./modules
+        { inherit metadata; }
         {
           nixpkgs.overlays = [
             (self: _: (import ./packages) { pkgs = self; })
@@ -40,10 +31,14 @@
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
         {
-          home-manager.sharedModules = [ inputs.sops-nix.homeManagerModules.sops metadata-module ];
+          home-manager.sharedModules = [
+            ./modules
+            { inherit metadata; }
+            inputs.sops-nix.homeManagerModules.sops
+          ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.${base-metadata.username} = import ./user;
+          home-manager.users.${metadata.username} = import ./user;
         }
       ];
     };
