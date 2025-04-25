@@ -14,7 +14,6 @@
     let
       system = "x86_64-linux";
       base-metadata = (nixpkgs.lib.modules.importTOML ./metadata.toml).config;
-      devshell-pkgs = devshell.packages.${system};
       metadata-module = {
           options = {
             metadata = nixpkgs.lib.mkOption {
@@ -34,6 +33,7 @@
         {
           nixpkgs.overlays = [
             (self: _: (import ./packages) { pkgs = self; })
+            (_: _: { devshell = devshell.packages.${system}.default; })
           ];
         }
         ./system
@@ -44,7 +44,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.${base-metadata.username} = import ./user;
-          home-manager.extraSpecialArgs = { inherit devshell-pkgs; };
         }
       ];
     };

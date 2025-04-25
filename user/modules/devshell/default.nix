@@ -1,4 +1,4 @@
-{ pkgs, devshell-pkgs, ...}:
+{ pkgs, ...}:
 {
-  home.packages = [ devshell-pkgs.default ];
+  home.packages = [ pkgs.devshell ];
 }
