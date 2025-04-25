@@ -1,8 +1,8 @@
-{ pkgs, metadata, ... }:
+{ pkgs, config, ... }:
 
 {
-  home.username = metadata.username;
-  home.homeDirectory = metadata.home-dir;
+  home.username = config.metadata.username;
+  home.homeDirectory = config.metadata.home-dir;
 
   home.stateVersion = "24.05";
 

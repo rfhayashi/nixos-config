@@ -1,4 +1,4 @@
-{ config, pkgs, metadata, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -69,9 +69,9 @@
     pulse.enable = true;
   };
 
-  users.users.${metadata.username} = {
+  users.users.${config.metadata.username} = {
     isNormalUser = true;
-    description = "${metadata.fullname}";
+    description = "${config.metadata.fullname}";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
@@ -80,7 +80,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.trusted-users = ["root" "${metadata.username}"];
+  nix.settings.trusted-users = ["root" "${config.metadata.username}"];
 
   programs.gnupg.agent = {
     enable = true;

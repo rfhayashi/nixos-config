@@ -1,4 +1,4 @@
-{ lib, config, pkgs, metadata, ...}:
+{ lib, config, ...}:
 {
   programs.gh.enable = true;
 
@@ -18,8 +18,8 @@
 
   programs.git = {
     enable = true;
-    userName = metadata.fullname;
-    userEmail = metadata.email;
+    userName = config.metadata.fullname;
+    userEmail = config.metadata.email;
     extraConfig = {
       gpg.format = "ssh";
       push.autoSetupRemote = true;
