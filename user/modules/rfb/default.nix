@@ -5,7 +5,7 @@
   services.git-sync = {
     enable = true;
     repositories.rfb = {
-      path = "${config.metadata.home-dir}/ProgramasRFB";
+      path = "${config.metadata.homeDir}/ProgramasRFB";
       uri = "git+ssh://git@github.com:/rfhayashi/ProgramasRFB.git";
     };
   };
