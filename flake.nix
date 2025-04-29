@@ -10,7 +10,7 @@
     devshell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, sops-nix, home-manager, devshell, ... }@inputs:
+  outputs = { nixpkgs, sops-nix, home-manager, devshell, ... }@inputs:
     let
       system = "x86_64-linux";
       metadata = import ./metadata.nix;
