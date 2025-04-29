@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     devenv
     nil
+    nixfmt-classic
   ];
 
   programs.bash.enable = true;
