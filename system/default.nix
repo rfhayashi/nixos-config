@@ -95,6 +95,8 @@
 
   fonts.packages = with pkgs; [ source-code-pro ];
 
+  environment.systemPackages = [ pkgs.home-manager ];
+
   services.autorandr = {
     enable = true;
     hooks = {
