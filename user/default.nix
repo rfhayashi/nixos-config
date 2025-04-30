@@ -8,8 +8,6 @@
 
   imports = [ ./modules ./config ];
 
-  programs.home-manager.enable = true;
-  
   home.packages = with pkgs; [
     discord
     zoom-us
