@@ -25,7 +25,6 @@
           nixpkgs.overlays = [
             (self: _: (import ./packages) { pkgs = self; })
             (_: _: { devshell = devshell.packages.${system}.default; })
-            (_: _: { home-manager = home-manager.packages.${system}.home-manager; })
           ];
         }
         ./system
