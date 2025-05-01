@@ -30,16 +30,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1746119075,
-        "narHash": "sha256-s3XaWFg7QRxpX0q+MFpW6PsH6x3heEadP3k+yx2EHe4=",
+        "lastModified": 1746120582,
+        "narHash": "sha256-kR8amSiB7ghpTlmy49p4g9QOjZzjTQGehv++XPNWMF8=",
         "owner": "rfhayashi",
         "repo": "emacs.d",
-        "rev": "2bb67ada436430a74b6bb265a48c14b159fbca80",
+        "rev": "bd708c58036953f83c92b3abec66ee3d77ce6605",
         "type": "github"
       },
       "original": {
         "owner": "rfhayashi",
-        "ref": "flake",
         "repo": "emacs.d",
         "type": "github"
       }

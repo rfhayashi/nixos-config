@@ -8,7 +8,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     devshell.url = "github:rfhayashi/devshells?dir=devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
-    emacs.url = "github:rfhayashi/emacs.d/flake";
+    emacs.url = "github:rfhayashi/emacs.d";
     emacs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
