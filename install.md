@@ -64,7 +64,6 @@ Run `nix-shell -p git --command "sudo nixos-rebuild switch --flake ."` to finish
 mkdir ~/dev
 cd ~/dev
 git clone git@github.com:rfhayashi/nixos-config
-git clone git@github.com:rfhayashi/emacs.d
 cd nixos-config
 cp /tmp/nixos-config/system/hardware.nix system/hardware.nix
 git add .
