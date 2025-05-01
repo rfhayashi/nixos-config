@@ -8,9 +8,11 @@
     sops-nix.url = "github:Mic92/sops-nix";
     devshell.url = "github:rfhayashi/devshells?dir=devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+    emacs.url = "github:rfhayashi/emacs.d/flake";
+    emacs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, sops-nix, home-manager, devshell, ... }@inputs:
+  outputs = { nixpkgs, sops-nix, home-manager, devshell, emacs, ... }@inputs:
     let
       system = "x86_64-linux";
       metadata = import ./metadata.nix;
@@ -35,6 +37,8 @@
             ./modules
             { inherit metadata; }
             inputs.sops-nix.homeManagerModules.sops
+            ({ config, ... }: { programs.emacs.userDir = "${config.home.homeDirectory}/dev/emacs.d"; })
+            inputs.emacs.lib.home-manager-module
           ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
