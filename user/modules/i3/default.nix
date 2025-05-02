@@ -225,7 +225,6 @@ bar {
 }
 
 # window rules
-for_window [class="^Alacritty$"] floating enable
 assign [class="^Emacs$"] $ws_editor
 assign [class="^firefox$"] $ws_web
 
