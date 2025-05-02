@@ -12,5 +12,7 @@ in
     services.xserver.windowManager.i3 = {
       enable = true;
     };
+
+    security.pam.services.i3lock.enable = true;
   };
 }
