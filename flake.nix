@@ -12,39 +12,41 @@
     emacs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, sops-nix, home-manager, devshell, emacs, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
-      metadata = import ./metadata.nix;
-    in
-    {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        ./modules
-        { inherit metadata; }
-        {
-          nixpkgs.overlays = [
-            (self: _: (import ./packages) { pkgs = self; })
-            (_: _: { devshell = devshell.packages.${system}.default; })
+      baseSystem = { extraModules ? [ ] }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./system.nix { inherit inputs system; }) ]
+            ++ extraModules;
+        };
+      pkgs = import nixpkgs { inherit system; };
+      runTestVm = pkgs.writeShellScript "runTestVm" ''
+        	nix build #nixosConfigurations.testVm.config.system.build.vm
+                result/bin/run-nixos-vm
+      '';
+    in {
+      nixosConfigurations = {
+        nixos = baseSystem { };
+        testVm = baseSystem {
+          extraModules = [
+            {
+              virtualisation.vmVariant = {
+                virtualisation = {
+                  memorySize = 4096; # Use 4096MiB memory.
+                  cores = 2;
+                  graphics = true;
+                };
+              };
+            }
+            { metadata.password = "test"; }
           ];
-        }
-        ./system
-        sops-nix.nixosModules.sops
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.sharedModules = [
-            ./modules
-            { inherit metadata; }
-            inputs.sops-nix.homeManagerModules.sops
-            ({ config, ... }: { programs.emacs.userDir = "${config.home.homeDirectory}/dev/emacs.d"; })
-            inputs.emacs.lib.home-manager-module
-          ];
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${metadata.username} = import ./user;
-        }
-      ];
+        };
+      };
+      apps.${system}.runTestVm = {
+        type = "app";
+        program = "${runTestVm}";
+      };
     };
-  };
 }

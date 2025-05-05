@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -73,6 +73,7 @@
     isNormalUser = true;
     description = "${config.metadata.fullname}";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
+    initialPassword = lib.mkIf (config.metadata.password != "") config.metadata.password;
   };
 
   programs.firefox.enable = true;
