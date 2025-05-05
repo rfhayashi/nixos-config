@@ -23,8 +23,8 @@
         };
       pkgs = import nixpkgs { inherit system; };
       runTestVm = pkgs.writeShellScript "runTestVm" ''
-        	nix build #nixosConfigurations.testVm.config.system.build.vm
-                result/bin/run-nixos-vm
+        nix build #nixosConfigurations.testVm.config.system.build.vm
+        result/bin/run-nixos-vm
       '';
     in {
       nixosConfigurations = {
