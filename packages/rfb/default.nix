@@ -60,9 +60,9 @@ in
   irpf = rfbProgram rec {
     name = "irpf";
     year = "2025";
-    version = "1.0";
+    version = "1.3";
     url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/irpf/arquivos/IRPF${year}-${version}.zip";
-    sha256 = "sha256-gDGDOthUbRmj68CHmHhaYlGs4tiQTNVlEmuyLZ5e0zY=";
+    sha256 = "sha256-BWCxnKPvkijVkXfbA1iVbdcgLZqY5SAzASqnzdjXwiw=";
     jarName = name;
     desktopName = "IRPF";
   };
