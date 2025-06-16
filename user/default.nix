@@ -14,6 +14,7 @@
     nyxt
     google-chrome
     jq
+    wget
   ];
 
   programs.vim = {
