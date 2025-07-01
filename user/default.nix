@@ -15,6 +15,7 @@
     google-chrome
     jq
     wget
+    unzip
   ];
 
   programs.vim = {
