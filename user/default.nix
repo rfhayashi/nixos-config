@@ -9,6 +9,7 @@
   imports = [ ./modules ./config ];
 
   home.packages = with pkgs; [
+    vlc
     discord
     zoom-us
     nyxt
