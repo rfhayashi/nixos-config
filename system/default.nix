@@ -43,6 +43,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   rfhayashi.i3.enable = true;
+  programs.hyprland.enable = true;
+  environment.systemPackages = [ pkgs.kitty ];
 
   services.picom = {
     enable = true;
