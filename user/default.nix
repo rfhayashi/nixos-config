@@ -17,6 +17,7 @@
     jq
     wget
     unzip
+    ripgrep
   ];
 
   programs.vim = {
