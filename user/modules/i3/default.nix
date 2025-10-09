@@ -6,6 +6,11 @@ let
 in
 {
   config = mkIf cfg.enable {
+    services.screen-locker = {
+      enable = true;
+      lockCmd = "${lib.getExe pkgs.i3lock} -n -c 000000 && xset dpms force off";
+    };
+
     home.packages = with pkgs; [ libnotify notify-osd wmctrl blueman ];
 
     # kept here if we decide to use rofi again
@@ -29,11 +34,6 @@ client.focused              #688060 #688060 #DCDCCC #ffcfaf
 client.focused_inactive     #3f3f3f #3F3F3F #7f9f7f #3f3f3f
 client.unfocused            #3f3f3f #3F3F3F #DCDCCC #3f3f3f
 client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
-
-# TODO do we still need xss-lock given we are using suspend? (make sure computer is suspended after inactivity)
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id ${pkgs.xss-lock}/bin/xss-lock -- sh -c "i3lock -n -c 000000 && xset dpms force off"
 
 bindsym $mod+Escape exec --no-startup-id ${pkgs.suspend}
 
