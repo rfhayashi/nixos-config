@@ -18,6 +18,7 @@
     wget
     unzip
     ripgrep
+    tmux
   ];
 
   programs.vim = {
