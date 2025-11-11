@@ -10,6 +10,8 @@
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     emacs.url = "github:rfhayashi/emacs.d";
     emacs.inputs.nixpkgs.follows = "nixpkgs";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, ... }@inputs:
