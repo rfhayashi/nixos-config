@@ -7,6 +7,7 @@ in {
       userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
       keybindings = builtins.fromJSON (builtins.readFile ./keybindings.json);
       extensions = [
+        mkt-pkgs.ryanolsonx.zenburn
         pkgs.vscode-extensions.vscodevim.vim
         pkgs.vscode-extensions.vspacecode.whichkey
         pkgs.vscode-extensions.vspacecode.vspacecode
