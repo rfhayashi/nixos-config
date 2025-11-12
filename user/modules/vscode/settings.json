@@ -5,6 +5,7 @@
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
+    "nix.enableLanguageServer": true,
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
