@@ -1,6 +1,7 @@
 {
     "workbench.colorTheme": "Zenburn",
     "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": false,
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
