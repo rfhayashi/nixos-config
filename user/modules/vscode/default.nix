@@ -8,6 +8,7 @@ in {
       keybindings = builtins.fromJSON (builtins.readFile ./keybindings.json);
       extensions = [
         mkt-pkgs.ryanolsonx.zenburn
+        mkt-pkgs.bodil.file-browser
         pkgs.vscode-extensions.vscodevim.vim
         pkgs.vscode-extensions.vspacecode.whichkey
         pkgs.vscode-extensions.vspacecode.vspacecode
