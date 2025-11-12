@@ -12,9 +12,8 @@ in {
         pkgs.vscode-extensions.vspacecode.whichkey
         pkgs.vscode-extensions.vspacecode.vspacecode
         mkt-pkgs.shadowndacorner.vscode-easymotion
-        mkt-pkgs.bbenoist.nix
         mkt-pkgs.kahole.magit
-        mkt-pkgs.brettm12345.nixfmt-vscode
+        mkt-pkgs.jnoortheen.nix-ide
       ];
     };
   };
