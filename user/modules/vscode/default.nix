@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let mkt-pkgs = pkgs.vscode-marketplace;
+in {
   programs.vscode = {
     enable = true;
     profiles.default = {
@@ -8,7 +10,9 @@
         pkgs.vscode-extensions.vscodevim.vim
         pkgs.vscode-extensions.vspacecode.whichkey
         pkgs.vscode-extensions.vspacecode.vspacecode
-	pkgs.vscode-marketplace.shadowndacorner.vscode-easymotion
+        mkt-pkgs.shadowndacorner.vscode-easymotion
+        mkt-pkgs.bbenoist.nix
+        mkt-pkgs.hendo.magitts
       ];
     };
   };
