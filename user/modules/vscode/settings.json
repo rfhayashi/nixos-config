@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Zenburn",
+    "workbench.activityBar.location": "hidden",
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [

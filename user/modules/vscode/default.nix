@@ -13,7 +13,8 @@ in {
         pkgs.vscode-extensions.vspacecode.vspacecode
         mkt-pkgs.shadowndacorner.vscode-easymotion
         mkt-pkgs.bbenoist.nix
-        mkt-pkgs.hendo.magitts
+        mkt-pkgs.kahole.magit
+        mkt-pkgs.brettm12345.nixfmt-vscode
       ];
     };
   };
