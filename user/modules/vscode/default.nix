@@ -9,12 +9,14 @@ in {
       extensions = [
         mkt-pkgs.ryanolsonx.zenburn
         mkt-pkgs.bodil.file-browser
+        mkt-pkgs.mkhl.direnv
         pkgs.vscode-extensions.vscodevim.vim
         pkgs.vscode-extensions.vspacecode.whichkey
         pkgs.vscode-extensions.vspacecode.vspacecode
         mkt-pkgs.shadowndacorner.vscode-easymotion
         mkt-pkgs.kahole.magit
         mkt-pkgs.jnoortheen.nix-ide
+        mkt-pkgs.betterthantomorrow.calva
       ];
     };
   };
