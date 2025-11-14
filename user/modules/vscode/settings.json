@@ -6,15 +6,29 @@
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
     "nix.enableLanguageServer": true,
+    "nix.serverPath": "nil",
+    "nix.serverSettings": {
+        "nil": {
+            "formatting": {
+                "command ": [ "nixfmt" ]
+            }
+        }
+    },
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<space>"],
-            "commands": ["vspacecode.space"]
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
         },
         {
-            "before": [","],
+            "before": [
+                ","
+            ],
             "commands": [
                 "vspacecode.space",
                 {
@@ -26,11 +40,17 @@
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<space>"],
-            "commands": ["vspacecode.space"]
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
         },
         {
-            "before": [","],
+            "before": [
+                ","
+            ],
             "commands": [
                 "vspacecode.space",
                 {
@@ -40,12 +60,20 @@
             ]
         },
         {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"]
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
         },
         {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"]
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
         }
     ]
 }
