@@ -1,12 +1,12 @@
-{ config, ...}:
-{
+{ config, ... }: {
   programs.gh.enable = true;
 
-  sops.secrets."git/ssh_key" = {};
-  sops.secrets."git/sign_ssh_key" = {};
+  sops.secrets."git/ssh_key" = { };
+  sops.secrets."git/sign_ssh_key" = { };
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks.github = {
       host = "github.com";
       hostname = "github.com";
@@ -18,9 +18,11 @@
 
   programs.git = {
     enable = true;
-    userName = config.metadata.fullname;
-    userEmail = config.metadata.email;
-    extraConfig = {
+    settings = {
+      user = {
+        email = config.metadata.fullname;
+        name = config.metadata.email;
+      };
       gpg.format = "ssh";
       push.autoSetupRemote = true;
     };

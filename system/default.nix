@@ -40,8 +40,8 @@
   services.xserver.enable = true;
   services.libinput.touchpad.naturalScrolling = true;
 
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   rfhayashi.i3.enable = true;
   programs.hyprland.enable = true;
 
