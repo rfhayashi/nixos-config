@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.gh.enable = true;
 
   sops.secrets."git/ssh_key" = { };
@@ -20,8 +20,8 @@
     enable = true;
     settings = {
       user = {
-        email = config.metadata.fullname;
-        name = config.metadata.email;
+        email = config.metadata.email;
+        name = config.metadata.fullname;
       };
       gpg.format = "ssh";
       push.autoSetupRemote = true;
@@ -31,5 +31,4 @@
       key = config.sops.secrets."git/sign_ssh_key".path;
     };
   };
-
 }
