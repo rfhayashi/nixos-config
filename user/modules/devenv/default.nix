@@ -5,6 +5,7 @@
     devenv
     nil
     nixfmt-classic
+    claude-code
   ];
 
   programs.bash.enable = true;
