@@ -6,6 +6,7 @@
     nil
     nixfmt-classic
     claude-code
+    inetutils
   ];
 
   programs.bash.enable = true;
