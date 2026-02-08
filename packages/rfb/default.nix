@@ -19,7 +19,7 @@ let
         cp -R * $out/${name}
         cat <<EOF > $out/bin/${name}
         #! ${pkgs.bash}/bin/bash
-        ${pkgs.jdk11}/bin/java -Xmx2048M -jar $out/${name}/${jarName}.jar
+        ${pkgs.jdk17}/bin/java -Xmx2048M -jar $out/${name}/${jarName}.jar
         EOF
         chmod +x $out/bin/${name}
         copyDesktopItems
@@ -38,21 +38,31 @@ let
 in
 {
   gcap2024 = rfbProgram rec {
-    name = "gcap24";
+    name = "gcap2024";
     year = "2024";
-    version = "1.5";
+    version = "1.6";
     url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP${year}v${version}.zip";
     sha256 = "sha256-XMFnJhtpAw1KojPI4l2BOsrtXcVygcEgAz37hucxRb4=";
     jarName = "GCAP";
     desktopName = "GCAP";
   };
 
-  gcap = rfbProgram rec {
-    name = "gcap";
+  gcap2025 = rfbProgram rec {
+    name = "gcap2025";
     year = "2025";
-    version = "1.1";
+    version = "1.4";
     url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP${year}v${version}.zip";
     sha256 = "sha256-PrtHEwfmAbRyQ7DedB3MLH7mN7tH9eoJSELjvge8rak=";
+    jarName = "GCAP";
+    desktopName = "GCAP";
+  };
+  
+  gcap2026 = rfbProgram rec {
+    name = "gcap2026";
+    year = "2026";
+    version = "1.0";
+    url = "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP${year}v${version}.zip";
+    sha256 = "sha256-0HHrj5AYlp2QCSYXrLP6HU1ZX9szMSE+yXfgfm5n1Sc=";
     jarName = "GCAP";
     desktopName = "GCAP";
   };

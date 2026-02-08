@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 {
-  home.packages = [ pkgs.rfb.gcap2024 pkgs.rfb.gcap pkgs.rfb.irpf ];
+  home.packages = [ pkgs.rfb.gcap2024 pkgs.rfb.gcap2025 pkgs.rfb.gcap2026 pkgs.rfb.irpf ];
 
   services.git-sync = {
     enable = true;
