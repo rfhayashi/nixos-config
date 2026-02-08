@@ -1,7 +1,7 @@
 { pkgs }:
 let
   rfbProgram = { name, year, version, jarName, url, sha256, desktopName }:
-    pkgs.stdenv.mkDerivation (finalAttrs: {
+    pkgs.stdenv.mkDerivation {
       pname = "${name}-${year}";
       inherit version;
 
@@ -34,7 +34,7 @@ let
           icon = ./icons/Logo_Receita_Federal_do_Brasil.svg;
         })
       ];
-    });
+    };
 in
 {
   gcap2024 = rfbProgram rec {
