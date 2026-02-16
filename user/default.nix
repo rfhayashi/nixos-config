@@ -19,6 +19,7 @@
     unzip
     ripgrep
     tmux
+    bubblewrap
   ];
 
   programs.vim = {
