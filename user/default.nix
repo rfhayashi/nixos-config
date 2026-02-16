@@ -22,6 +22,14 @@
     bubblewrap
   ];
 
+  programs.brave = {
+    enable = true;
+    extensions = [
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+      { id = "ldjkgaaoikpmhmkelcgkgacicjfbofhh"; } # instapaper
+    ];
+  };
+
   programs.vim = {
     enable = true;
     defaultEditor = true;
