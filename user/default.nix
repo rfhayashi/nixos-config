@@ -27,6 +27,7 @@
     extensions = [
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
       { id = "ldjkgaaoikpmhmkelcgkgacicjfbofhh"; } # instapaper
+      { id = "gfbliohnnapiefjpjlpjnehglfpaknnc"; } # surfingkeys
     ];
   };
 
