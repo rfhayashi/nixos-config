@@ -226,11 +226,11 @@ bar {
 
 # window rules
 assign [class="^Emacs$"] $ws_editor
-assign [class="^firefox$"] $ws_web
+assign [class="^Brave"] $ws_web
 
 # start programs
 exec ${pkgs.emacs}/bin/emacs
-exec ${pkgs.firefox}/bin/firefox
+exec ${pkgs.brave}/bin/brave
 
 '';  
   };
