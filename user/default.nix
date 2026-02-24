@@ -6,6 +6,12 @@
 
   home.stateVersion = "24.05";
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   imports = [ ./modules ./config ];
 
   home.packages = with pkgs; [
