@@ -6,6 +6,7 @@
     nil
     nixfmt-classic
     claude-code
+    codex
     inetutils
   ];
 
