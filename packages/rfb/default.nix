@@ -42,7 +42,7 @@ in {
     version = "1.4";
     url =
       "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/gcap/GCAP${year}v${version}.zip";
-    sha256 = "sha256-PrtHEwfmAbRyQ7DedB3MLH7mN7tH9eoJSELjvge8rak=";
+    sha256 = "sha256-aXTuazNXlX8dAZImklHQLs3cfeuoHDyrjpQcVmCPBh0=a";
     jarName = "GCAP";
     desktopName = "GCAP";
   };
