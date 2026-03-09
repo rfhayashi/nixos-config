@@ -86,6 +86,7 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
   virtualisation.virtualbox.host.enable = true;
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; # required by virtualbox
 
