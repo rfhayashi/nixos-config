@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
   programs.gh.enable = true;
 
   sops.secrets."git/ssh_key" = { };
