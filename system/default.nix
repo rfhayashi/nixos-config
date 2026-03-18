@@ -77,7 +77,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features =
-    [ "nix-command" "flakes" "impure-derivations ca-derivations" ];
+    [ "nix-command" "flakes" ];
   nix.settings.trusted-users = [ "root" "${config.metadata.username}" ];
 
   programs.gnupg.agent = {
