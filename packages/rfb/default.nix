@@ -58,14 +58,26 @@ in {
     desktopName = "GCAP";
   };
 
-  irpf = rfbProgram rec {
-    name = "irpf";
+  irpf2025 = rfbProgram rec {
+    name = "irpf2025";
     year = "2025";
     version = "1.3";
     url =
       "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/irpf/arquivos/IRPF${year}-${version}.zip";
     sha256 = "sha256-BWCxnKPvkijVkXfbA1iVbdcgLZqY5SAzASqnzdjXwiw=";
-    jarName = name;
+    jarName = "irpf";
     desktopName = "IRPF";
   };
+
+  irpf2026 = rfbProgram rec {
+    name = "irpf2026";
+    year = "2026";
+    version = "1.0";
+    url =
+      "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/irpf/arquivos/IRPF${year}-${version}.zip";
+    sha256 = "sha256-hePdoDbFPOMjdSzsJqZWyFhHX138bMuocwCNpdOEkKA=";
+    jarName = "irpf";
+    desktopName = "IRPF";
+  };
+
 }
