@@ -20,6 +20,7 @@
     ripgrep
     tmux
     bubblewrap
+    gnome-screenshot
   ];
 
   programs.brave = {
