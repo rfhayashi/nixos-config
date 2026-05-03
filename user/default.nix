@@ -21,6 +21,7 @@
     tmux
     bubblewrap
     gnome-screenshot
+    arandr
   ];
 
   programs.brave = {
