@@ -72,10 +72,10 @@ in {
   irpf2026 = rfbProgram rec {
     name = "irpf2026";
     year = "2026";
-    version = "1.0";
+    version = "1.1";
     url =
       "https://downloadirpf.receita.fazenda.gov.br/irpf/${year}/irpf/arquivos/IRPF${year}-${version}.zip";
-    sha256 = "sha256-hePdoDbFPOMjdSzsJqZWyFhHX138bMuocwCNpdOEkKA=";
+    sha256 = "sha256-/UB8mWB3yaT+mDa3mqGm2ULqDdNcmQu+cHKNdKQa/ug=";
     jarName = "irpf";
     desktopName = "IRPF";
   };
