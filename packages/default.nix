@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   rfb = import ./rfb { inherit pkgs; };
 
@@ -14,5 +14,7 @@
           new-layout (case layout "br" "us" "br")]
       (shell/sh "${pkgs.xorg.setxkbmap}/bin/setxkbmap" new-layout))
   '';
+
+  f1multiviewer = import ./f1multiviewer { inherit lib pkgs; };
 
 }

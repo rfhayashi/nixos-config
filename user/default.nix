@@ -22,6 +22,7 @@
     bubblewrap
     gnome-screenshot
     arandr
+    f1multiviewer
   ];
 
   programs.brave = {

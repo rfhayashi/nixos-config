@@ -4,13 +4,13 @@ in {
   imports = [
     ./modules
     { inherit metadata; }
-    {
+    ({ lib, ...}:{
       nixpkgs.overlays = [
-        (self: _: (import ./packages) { pkgs = self; })
+        (self: _: (import ./packages) { pkgs = self; inherit lib; })
         (_: _: { devshell = inputs.devshell.packages.${system}.default; })
         inputs.nix-vscode-extensions.overlays.default
       ];
-    }
+    })
     ./system
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
