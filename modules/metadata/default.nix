@@ -16,11 +16,6 @@ in {
           };
           fullname = mkOption { type = types.str; };
           email = mkOption { type = types.str; };
-          clojurePortal = mkOption {
-            type = types.submodule {
-              options = { version = mkOption { type = types.str; }; };
-            };
-          };
         };
       };
     };
