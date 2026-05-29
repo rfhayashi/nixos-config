@@ -23,6 +23,7 @@
     gnome-screenshot
     arandr
     f1multiviewer
+    babashka
   ];
 
   programs.brave = {
