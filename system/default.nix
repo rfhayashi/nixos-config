@@ -45,7 +45,6 @@
     enable = true;
     vSync = true;
     backend = "glx";
-    opacityRules = [ "100:class_g = 'Ulauncher'" ];
   };
 
   services.xserver.xkb = {
