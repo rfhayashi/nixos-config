@@ -1,8 +1,8 @@
 {
   home.file.".config/eca/config.json".text = builtins.toJSON {
-    defaultProvider = "github-copilot";
-    defaultModel = "github-copilot/gpt-5.3-codex";
-    rewrite.model = "github-copilot/gpt-5.3-codex";
+    defaultProvider = "openai";
+    defaultModel = "openai/gpt-5.5";
+    rewrite.model = "openai/gpt-5.5";
     plugins.install = [
       "caveman"
     ];
