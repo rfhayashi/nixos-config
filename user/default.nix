@@ -24,6 +24,7 @@
     arandr
     f1multiviewer
     babashka
+    difftastic
   ];
 
   programs.brave = {
