@@ -42,6 +42,23 @@ in
               };
             }
           )
+          (
+            _: prev:
+            let
+              chromiumX11CommandLineArgs = [ "--ozone-platform=x11" ];
+            in
+            {
+              brave = prev.brave.override {
+                commandLineArgs = chromiumX11CommandLineArgs;
+              };
+              chromium = prev.chromium.override {
+                commandLineArgs = chromiumX11CommandLineArgs;
+              };
+              google-chrome = prev.google-chrome.override {
+                commandLineArgs = chromiumX11CommandLineArgs;
+              };
+            }
+          )
           (_: _: { devshell = inputs.devshell.packages.${system}.default; })
           inputs.nix-vscode-extensions.overlays.default
         ];
