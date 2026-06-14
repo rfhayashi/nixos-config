@@ -3,10 +3,8 @@ let
   multiviewerZip = pkgs.runCommand "multiviewer" {
     buildInputs = [ pkgs.unzip ];
     zip_file = pkgs.fetchurl {
-      url =
-        "https://releases.multiviewer.app/download/409384259/MultiViewer-linux-x64-2.7.2.zip";
-      hash = "sha256-SuCi/HM+WZAf80kL09ypRalshG32pszhK4sh/o9ZIOw=";
-
+      url = "https://releases.multiviewer.app/download/415542784/MultiViewer-linux-x64-2.7.3.zip";
+      hash = "sha256-Mgq0bhQOTUS9F1uGOl9mRrcNsQREhEJHzX/yVglEZO8=";
     };
 
   } ''
@@ -41,7 +39,7 @@ let
     runScript = "${multiviewerZip}/multiviewer";
   };
   multiviewer = pkgs.writeShellScript "multiviewer" ''
-    ${lib.getExe multiviewerEnv} "$@"
+    ${lib.getExe multiviewerEnv} --ozone-platform=x11 "$@"
   '';
 in pkgs.runCommand "multiviewer" {
   nativeBuildInputs = [ pkgs.copyDesktopItems ];
