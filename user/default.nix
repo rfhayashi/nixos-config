@@ -25,6 +25,7 @@
     f1multiviewer
     babashka
     difftastic
+    calibre
   ];
 
   programs.brave = {
