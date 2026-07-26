@@ -3,8 +3,8 @@ let
   multiviewerZip = pkgs.runCommand "multiviewer" {
     buildInputs = [ pkgs.unzip ];
     zip_file = pkgs.fetchurl {
-      url = "https://releases.multiviewer.app/download/415542784/MultiViewer-linux-x64-2.7.3.zip";
-      hash = "sha256-Mgq0bhQOTUS9F1uGOl9mRrcNsQREhEJHzX/yVglEZO8=";
+      url = "https://releases.multiviewer.app/download/490012941/MultiViewer-linux-x64-2.8.3.zip";
+      hash = "sha256-Aupaw1q5xXL7f/Mrpivkw8XKkL++3smC/LhyEAzxqkg=";
     };
 
   } ''
