@@ -7,12 +7,11 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks.github = {
-      host = "github.com";
-      hostname = "github.com";
-      identityFile = config.sops.secrets."git/ssh_key".path;
-      identitiesOnly = true;
-      user = "git";
+    settings."github.com" = {
+      HostName = "github.com";
+      IdentityFile = config.sops.secrets."git/ssh_key".path;
+      IdentitiesOnly = true;
+      User = "git";
     };
   };
 
