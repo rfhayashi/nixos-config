@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     devenv
     nil
-    nixfmt-classic
+    nixfmt
     claude-code
     codex
     inetutils
