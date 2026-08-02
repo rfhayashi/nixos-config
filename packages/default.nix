@@ -9,10 +9,10 @@
   switch-keyboard-layout = pkgs.writeScriptBin "switch-keyboard-layout" ''
     #!${pkgs.babashka}/bin/bb
 
-    (let [output (:out (shell/sh "${pkgs.xorg.setxkbmap}/bin/setxkbmap" "-query"))
+    (let [output (:out (shell/sh "${pkgs.setxkbmap}/bin/setxkbmap" "-query"))
           [_ layout] (re-find #"layout: *(\w+)\n" output)
           new-layout (case layout "br" "us" "br")]
-      (shell/sh "${pkgs.xorg.setxkbmap}/bin/setxkbmap" new-layout))
+      (shell/sh "${pkgs.setxkbmap}/bin/setxkbmap" new-layout))
   '';
 
   f1multiviewer = import ./f1multiviewer { inherit lib pkgs; };
