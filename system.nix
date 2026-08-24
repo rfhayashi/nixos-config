@@ -60,7 +60,6 @@ in
             }
           )
           (_: _: { devshell = inputs.devshell.packages.${system}.default; })
-          inputs.nix-vscode-extensions.overlays.default
         ];
       }
     )
