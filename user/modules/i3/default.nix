@@ -161,8 +161,8 @@ set $ws_editor "3: editor"
 set $ws_web "4: web"
 
 workspace $ws_editor output primary
-workspace $ws_monitor output nonprimary primary
-workspace $ws_web output nonprimary primary
+workspace $ws_monitor output DP-2 DP-1 nonprimary primary
+workspace $ws_web output DP-2 DP-1 nonprimary primary
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws_monitor
