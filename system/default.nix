@@ -12,6 +12,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
 
   networking.hostName = "nixos";
 
