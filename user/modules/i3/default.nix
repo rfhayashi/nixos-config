@@ -81,7 +81,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec ${pkgs.alacritty}/bin/alacritty
 
 # start the browser
-bindsym $mod+Shift+Return exec ${pkgs.brave}/bin/brave
+bindsym $mod+Shift+Return exec ${pkgs.chromium}/bin/chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -226,11 +226,11 @@ bar {
 
 # window rules
 assign [class="^Emacs$"] $ws_editor
-assign [class="^Brave"] $ws_web
+assign [class="^Chromium$"] $ws_web
 
 # start programs
 exec ${pkgs.emacs}/bin/emacs
-exec ${pkgs.brave}/bin/brave
+exec ${pkgs.chromium}/bin/chromium
 
 '';  
   };

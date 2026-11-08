@@ -48,9 +48,6 @@ in
               chromiumX11CommandLineArgs = [ "--ozone-platform=x11" ];
             in
             {
-              brave = prev.brave.override {
-                commandLineArgs = chromiumX11CommandLineArgs;
-              };
               chromium = prev.chromium.override {
                 commandLineArgs = chromiumX11CommandLineArgs;
               };

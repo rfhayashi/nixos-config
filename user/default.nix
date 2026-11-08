@@ -28,7 +28,7 @@
     calibre
   ];
 
-  programs.brave = {
+  programs.chromium = {
     enable = true;
     extensions = [
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
