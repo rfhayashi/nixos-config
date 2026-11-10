@@ -226,7 +226,7 @@ bar {
 
 # window rules
 assign [class="^Emacs$"] $ws_editor
-assign [class="^Chromium$"] $ws_web
+assign [class="^Chromium-browser$"] $ws_web
 
 # start programs
 exec ${pkgs.emacs}/bin/emacs
