@@ -25,6 +25,7 @@
       gpg.format = "ssh";
       push.autoSetupRemote = true;
       pull.rebase = true;
+      init.defaultBranch = "main";
     };
     signing = {
       signByDefault = true;
