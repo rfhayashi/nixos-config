@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Zenburn",
-  "version": "1.0",
+  "version": "1.1",
   "theme": {
     "colors": {
-      "frame": [63, 63, 63],
-      "frame_inactive": [53, 53, 53],
-      "toolbar": [58, 58, 58],
+      "frame": [47, 47, 47],
+      "frame_inactive": [42, 42, 42],
+      "toolbar": [79, 79, 71],
       "tab_text": [220, 220, 204],
       "tab_background_text": [159, 175, 175],
       "bookmark_text": [220, 220, 204],
