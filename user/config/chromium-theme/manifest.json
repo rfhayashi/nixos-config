@@ -1,19 +1,20 @@
 {
   "manifest_version": 3,
   "name": "Zenburn",
-  "version": "1.1",
+  "version": "1.2",
   "theme": {
     "colors": {
       "frame": [47, 47, 47],
       "frame_inactive": [42, 42, 42],
       "toolbar": [79, 79, 71],
+      "toolbar_button_icon": [220, 220, 204],
       "tab_text": [220, 220, 204],
       "tab_background_text": [159, 175, 175],
       "bookmark_text": [220, 220, 204],
       "ntp_background": [58, 58, 58],
       "ntp_text": [220, 220, 204],
       "ntp_link": [140, 208, 211],
-      "button_background": [58, 58, 58]
+      "button_background": [120, 120, 104]
     }
   }
 }
