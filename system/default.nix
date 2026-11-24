@@ -39,6 +39,7 @@
 
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  services.gnome.gcr-ssh-agent.enable = false;
   rfhayashi.i3.enable = true;
   programs.hyprland.enable = true;
 
@@ -79,11 +80,6 @@
   nix.settings.experimental-features =
     [ "nix-command" "flakes" ];
   nix.settings.trusted-users = [ "root" "${config.metadata.username}" ];
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   virtualisation.docker.enable = true;
 
